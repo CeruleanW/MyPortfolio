@@ -3,15 +3,23 @@ import { v4 as uuidv4 } from 'uuid';
 import FooterWrapper from "../components/Footer/FooterWrapper";
 import FooterContent from "../components/Footer/FooterContent";
 import Nav from "../components/Nav";
-import Section from "../components/Section";
 import resumeData from '../components/resumeData';
+import NavTabs from '../components/NavTabs';
+import Home from "../components/Home";
+import Projects from "../components/Project/Projects";
+import AboutMe from "../components/AboutMe/AboutMe";
+import Contact from '../components/Contact/Contact';
 
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
+import Theme from '../components/Theme';
 import { makeStyles } from '@material-ui/core/styles';
-const useStyles = makeStyles({
-  // flexContent: {
-  //   flex: "1 0 auto",
-  // }
-});
+
 
 // Sections
 // - Career Goals: Your professional goals for the next five years.
@@ -19,16 +27,15 @@ const useStyles = makeStyles({
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
 
-
-
-function App() {
-  const classes = useStyles();
-
-  function getData(data) { }
-  function storeData(key, value) { }
+export default function App() {
+  // States
   const initialState = () => getData('data') || [];
   const [state, setState] = useState(initialState);
   const [data, setData] = useState({});
+
+  // Data?
+  function getData(data) { }
+  function storeData(key, value) { }
 
   useEffect(() => {
     storeData('data', state);
@@ -38,13 +45,33 @@ function App() {
     setData(newData);
   }, [state]);
 
+  //Routing tabs
+  const allTabs = ["/", "/projects", "/aboutme", "/contact"];
+
   return (
-    <div>
-      <Nav />
-      <Section />
-      {/* <Footer /> */}
-      <FooterWrapper> <FooterContent/> </FooterWrapper>
-    </div>
+    <Theme>
+      <BrowserRouter>
+        <div className="App">
+          <Nav routes={allTabs}>
+            <Route
+              path="/"
+              render={({ location }) => (
+                <>
+                  <NavTabs routes={allTabs} value={location.pathname} />
+                </>
+              )}
+            />
+          </Nav>
+
+          <Switch>
+            <Route exact path={allTabs[0]} render={() => <Home />} />
+            <Route path={allTabs[1]} render={() => <Projects />} />
+            <Route path={allTabs[2]} render={() => <AboutMe />} />
+            <Route path={allTabs[3]} render={() => <Contact />} />
+          </Switch>
+          <FooterWrapper> <FooterContent /> </FooterWrapper>
+        </div>
+      </BrowserRouter>
+    </Theme>
   );
 }
-export default App;

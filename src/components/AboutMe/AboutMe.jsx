@@ -8,15 +8,13 @@
 // include a contact form and your social media channels.
 // about this site
 import React, { Component } from 'react';
-import profilePhoto from './profilePhoto';
+import profilePhoto from './profilePhoto.JPG';
 
 // Statement of Originality: A paragraph stating that this is your work and that it is confidential. also indicate if any parts of the portfolio should not be copied.
 const statementOfOriginality = 'This portfolio is the work of Yi Yang. Please do not copy without permission. Some of the exhibits, work samples, and/or service samples are the proprietary property of the organization whose name appears on the document. Each has granted permission for this product to be used as a demonstration of my work';
 
 
-
-export class AboutMe extends Component {
-
+export default class AboutMe extends Component {
     render() {
         return (
             <>
@@ -29,5 +27,3 @@ export class AboutMe extends Component {
         )
     }
 }
-
-export default AboutMe
