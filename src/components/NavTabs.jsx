@@ -1,6 +1,9 @@
 import { Tab, Tabs } from '@material-ui/core/';
 import { Link } from "react-router-dom";
 
+//TODO
+// - add icons
+
 export default function NavTabs(props) {
     const allTabs = props.routes; //["/", "/projects", "/aboutme", "/contact"];
     function handleChange(e) { }
@@ -23,5 +26,3 @@ export default function NavTabs(props) {
         </Tabs>
     );
 }
-
-// export default NavTabs

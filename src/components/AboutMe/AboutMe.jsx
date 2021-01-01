@@ -20,8 +20,9 @@ export default class AboutMe extends Component {
             <>
                 <h1>About Me</h1>
                 <div>
-                    <h2>Statement of Originality</h2>
-                    <p>{statementOfOriginality}</p>
+                Yi Yang is a web developer originally from Zhuhai, China, but now living in Toronto, Canada. He just graduted from York University.
+                    {/* <h2>Statement of Originality</h2>
+                    <p>{statementOfOriginality}</p> */}
                 </div>
             </>
         )

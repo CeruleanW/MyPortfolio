@@ -5,7 +5,7 @@ import FooterContent from "../components/Footer/FooterContent";
 import Nav from "../components/Nav";
 import resumeData from '../components/resumeData';
 import NavTabs from '../components/NavTabs';
-import Home from "../components/Home";
+import Home from "../components/Home/Home";
 import Projects from "../components/Project/Projects";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Contact from '../components/Contact/Contact';
@@ -19,6 +19,7 @@ import {
 
 import Theme from '../components/Theme';
 import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 
 // Sections
@@ -50,6 +51,7 @@ export default function App() {
 
   return (
     <Theme>
+      <CssBaseline />
       <BrowserRouter>
         <div className="App">
           <Nav routes={allTabs}>
