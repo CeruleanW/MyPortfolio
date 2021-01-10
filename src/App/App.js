@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import FooterWrapper from "../components/Footer/FooterWrapper";
-import FooterContent from "../components/Footer/FooterContent";
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import NavTabs from "../components/NavTabs";
 import Home from "../components/Home/Home";
@@ -63,10 +62,7 @@ export default function App() {
             <Route path={allTabs[2]} render={() => <AboutMe />} />
             <Route path={allTabs[3]} render={() => <Contact />} />
           </Switch>
-          <FooterWrapper>
-            {" "}
-            <FooterContent />{" "}
-          </FooterWrapper>
+          <Footer />
         </div>
       </BrowserRouter>
     </Theme>

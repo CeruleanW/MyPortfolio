@@ -1,27 +1,47 @@
 import React, { useState } from "react";
-// import Slide from "react-swipeable-views";
 import { Box, Container, Grid } from "@material-ui/core";
-// import brokenCafe from "../../assets/img/logo512.png";
-// import churchIcon from "../../assets/img/church-icon.png";
 import {
   CarouselProvider,
   Slider,
   Slide,
   ButtonBack,
   ButtonNext,
+  Dot,
+  DotGroup,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { makeStyles } from "@material-ui/core/styles";
 import CustomCard from "./CustomCard/CustomCard";
-import { red, blue, green } from "@material-ui/core/colors";
-import cewImage from "../../assets/img/cew.png";
-import gpseImage from "../../assets/img/gpse.png";
-import bcImage from "../../assets/img/bc.png";
+// import { red, blue, green } from "@material-ui/core/colors";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { carouselProjects } from "../../data/projects.json";
+import "./ProjectsCarousel.css";
 
 const useStyles = makeStyles((theme) => ({
-  provider: {
-    // border: "3px solid red",
+  slider: {
+    borderRadius: theme.spacing(2),
   },
+  button: {
+    borderRadius: "50%",
+    borderColor: "#7e7e7e4f",
+    borderWidth: "1px",
+    width: theme.spacing(5),
+    height:theme.spacing(5),
+    '&:focus': {
+      outlineColor: "#7e7e7e4f"
+    }
+  },
+  dot: {
+    width: "11px",
+    height: "11px",
+    backgroundColor: "#ccc",
+    borderRadius: "50%",
+    borderWidth: "0",
+    '&:active': {
+      backgroundColor: "#000"
+    },
+  }
 }));
 
 //TODO:
@@ -39,30 +59,11 @@ function Media(props) {
 
 export default function ProjectsCarousel(props) {
   const classes = useStyles();
-  const projectList = [
-    {
-      title: "Landing Page - Broken Dream Café",
-      subtitle:
-        "A responsive design landing page for a non-existing restaurant, using React.js, Semantic UI React, and CSS Module",
-      bg: bcImage,
-    },
-    {
-      title: "Google Photos Search Enhancer",
-      subtitle:
-        "helps users to match words in the descriptions and filenames in Google Photos Library in any language, using React.js and Material UI, RESTful API of Google. Photo data are stored in IndexedDB",
-      bg: gpseImage,
-    },
-    {
-      title: "Church Education Website",
-      subtitle:
-        "A website developed for the sunday school of Zion Alliance Church",
-      bg: cewImage,
-    }
-  ];
+  const projectList = carouselProjects;
 
   return (
     <>
-      <Box maxWidth={"50%"} mx={"auto"}>
+      <Box mx={"auto"} maxWidth={540}>
         <CarouselProvider
           naturalSlideWidth={80}
           naturalSlideHeight={70}
@@ -70,19 +71,37 @@ export default function ProjectsCarousel(props) {
           className={classes.provider}
           infinite={true}
         >
-          <Slider>
-            {projectList.map( (project, index) => (<Slide index={index}> <CustomCard {...project} /> </Slide>))}
-          </Slider>
-          {/* <Container>
-            <Grid container justify="center" spacing={1}>
-              <Grid item>
-                <ButtonBack>Back</ButtonBack>
-              </Grid>
-              <Grid item>
-                <ButtonNext>Next</ButtonNext>
-              </Grid>
+          <Grid container alignItems={"center"} spacing={1} justify={"center"}>
+            <Grid container item xs={1} justify={"center"}>
+              <ButtonBack className={classes.button}>
+                <ArrowBackIcon />
+              </ButtonBack>
             </Grid>
-          </Container> */}
+            <Grid item xs={10} alignItems={"center"}>
+              <Slider className={classes.slider}>
+                {projectList.map((project, index) => (
+                  <>
+                    <Slide index={index}>
+                      <CustomCard {...project} />
+                    </Slide>
+                  </>
+                ))}
+              </Slider>
+            </Grid>
+            <Grid container item xs={1} justify={"center"}>
+              <ButtonNext className={classes.button}>
+                <ArrowForwardIcon />
+              </ButtonNext>
+            </Grid>
+            <Grid item xs={1} />
+            <Grid container item xs={10} justify={"center"}>
+              {projectList.map((project, index) => (
+                <Dot slide={index} />
+              ))}
+              {/* <DotGroup disableActiveDots className={classes.dot}/> */}
+            </Grid>
+            <Grid item xs={1} />
+          </Grid>
         </CarouselProvider>
       </Box>
     </>

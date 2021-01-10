@@ -18,23 +18,23 @@ import WithCenter from "../../WithCenter";
 //Styles
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
-  media: {
-    // width: "100%",
-    // paddingTop: "56.25%",
-    maxHeight: "40%",
-    height: "160px",
+  card: {
+    height: theme.spacing(49),
+    // display: "flex",
+    // flexDirection: "column",
   },
-  container: {
-    position: "relative",
+  media: {
+    width: "100%",
+    paddingTop: "56.25%",
+  },
+  title: {
+    // flex: 1
   },
   descrip: {
     opacity: 0.8,
   },
   button: {
     marginLeft: theme.spacing(1),
-  },
-  card: {
-    height: theme.spacing(40)
   }
 }));
 
@@ -81,20 +81,19 @@ export default function CustomCard(props) {
 
   return (
     <>
-      <Card elevation={6} className={classes.card}>
+      <Card elevation={3} className={classes.card}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={bg}
+            image={process.env.PUBLIC_URL + '/img/' + bg}
             cover={true}
             title={title}
           />
           <CardContent>
-            <Box>
+            <Box className={classes.title}>
               <Typography
                 gutterBottom
                 variant="h5"
-                className={classes.title}
                 align="center"
               >
                 {title}

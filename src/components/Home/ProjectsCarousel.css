@@ -1,0 +1,12 @@
+.carousel__dot--selected {
+  background-color: rgb(12, 114, 209) !important;
+}
+
+.carousel__dot {
+  width: 11px;
+  height: 11px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border-width: 0;
+  margin: 0 1px;
+}
