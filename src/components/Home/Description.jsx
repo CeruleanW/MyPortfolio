@@ -4,7 +4,7 @@ import React from "react";
 import { Typography, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  text: {
+  simple: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
   },
@@ -14,6 +14,7 @@ export default function Description(props) {
   const classes = useStyles();
   return (
     <Typography color="textSecondary" className={classes.text}>
+      {props.text}
       {props.children}
     </Typography>
   );

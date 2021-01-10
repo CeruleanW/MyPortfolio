@@ -1,0 +1,30 @@
+{
+  "projects": [{  "media": <img src={brokenCafe} alt="broken cafe" />,
+    title: "Landing Page - Broken Dream Café",
+    subtitle:
+      "A responsive design landing page for a non-existing restaurant, using React.js, Semantic UI React, and CSS Module"}]
+}
+
+
+const project1 = {
+
+};
+
+const project2 = {
+  media: (
+    <img
+      src="https://ceruleanw.github.io/google-photos-search-enhancer/static/media/icons8-search-500.b831ad50.png"
+      alt="Google Photos Search Enhancer"
+    />
+  ),
+  title: "Google Photos Search Enhancer",
+  subtitle:
+    "helps users to match words in the descriptions and filenames in Google Photos Library in any language, using React.js and Material UI, RESTful API of Google. Photo data are stored in IndexedDB",
+};
+
+const project3 = {
+  media: <img src={churchIcon} alt="Church Education Website" />,
+  title: "Church Education Website",
+  subtitle:
+    "A website developed for the sunday school of Zion Alliance Church",
+};
