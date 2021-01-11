@@ -27,21 +27,11 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "#7e7e7e4f",
     borderWidth: "1px",
     width: theme.spacing(5),
-    height:theme.spacing(5),
-    '&:focus': {
-      outlineColor: "#7e7e7e4f"
-    }
-  },
-  dot: {
-    width: "11px",
-    height: "11px",
-    backgroundColor: "#ccc",
-    borderRadius: "50%",
-    borderWidth: "0",
-    '&:active': {
-      backgroundColor: "#000"
+    height: theme.spacing(5),
+    "&:focus": {
+      outlineColor: "#7e7e7e4f",
     },
-  }
+  },
 }));
 
 //TODO:
@@ -77,17 +67,16 @@ export default function ProjectsCarousel(props) {
                 <ArrowBackIcon />
               </ButtonBack>
             </Grid>
-            <Grid item xs={10} alignItems={"center"}>
+            <Grid item xs={10}>
               <Slider className={classes.slider}>
                 {projectList.map((project, index) => (
-                  <>
-                    <Slide index={index}>
-                      <CustomCard {...project} />
-                    </Slide>
-                  </>
+                  <Slide key={"slide-" + index} index={index}>
+                    <CustomCard key={"card-" + index} {...project} bg={project.image} />
+                  </Slide>
                 ))}
               </Slider>
             </Grid>
+
             <Grid container item xs={1} justify={"center"}>
               <ButtonNext className={classes.button}>
                 <ArrowForwardIcon />
@@ -96,9 +85,8 @@ export default function ProjectsCarousel(props) {
             <Grid item xs={1} />
             <Grid container item xs={10} justify={"center"}>
               {projectList.map((project, index) => (
-                <Dot slide={index} />
+                <Dot slide={index} key={"dot-" + index} />
               ))}
-              {/* <DotGroup disableActiveDots className={classes.dot}/> */}
             </Grid>
             <Grid item xs={1} />
           </Grid>

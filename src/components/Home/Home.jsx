@@ -80,7 +80,6 @@ export default function Home() {
             </Box>
           </Grid>
           <Grid container item xs={12} md={6} alignItems={"flex-end"}>
-            {/* <Box height={30} bgcolor="secondary.light" mb={3}/> */}
             <Grid item xs={12}>
               <Box mx={10} mt={3}>
                 <Image src={mainPhoto} alt="Yi Yang's profile" cover={true} />

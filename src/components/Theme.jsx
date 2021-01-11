@@ -12,11 +12,12 @@ const themeInstance = createMuiTheme({
           light: '#DCEAEB',
           main: '#88BBBC',
           // dark: will be calculated from palette.secondary.main,
-          contrastText: '#ffcc00',
+          contrastText: '#fff',
         },
         text: {
             primary: '#373737',
             secondary: '#7E7E7E',
+            contrastBackground: '#65FFC9'
         }
         
         // // Used by `getContrastText()` to maximize the contrast between
@@ -30,7 +31,7 @@ const themeInstance = createMuiTheme({
 });
 
 themeInstance.typography.h1 = {
-    fontSize: '1.2rem',
+    fontSize: '1.9rem',
     [themeInstance.breakpoints.up('md')]: {
       fontSize: '2.4rem',
     },

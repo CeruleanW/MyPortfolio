@@ -3,10 +3,17 @@
 }
 
 .carousel__dot {
-  width: 11px;
-  height: 11px;
+  width: 16pt;
+  height: 16pt;
   background-color: #ccc;
   border-radius: 50%;
   border-width: 0;
-  margin: 0 1px;
+  margin: 0 2pt;
+}
+
+@media only screen and (min-width: 768px) {
+  .carousel__dot {
+    width: 12pt;
+    height: 12pt;
+  }
 }

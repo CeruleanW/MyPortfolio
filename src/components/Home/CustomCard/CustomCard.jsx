@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-Card.defaultProps = {
+CustomCard.defaultProps = {
   bg: defaultImage,
 };
 
-Card.propTypes = {
+CustomCard.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   bg: PropTypes.string,
