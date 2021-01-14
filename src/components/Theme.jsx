@@ -37,9 +37,11 @@ const themeInstance = createMuiTheme({
 themeInstance.typography.h1 = {
   fontSize: "1.9rem",
   [themeInstance.breakpoints.up("md")]: {
-    fontSize: "2.4rem",
+    fontSize: "2.8rem",
   },
   lineHeight: 1.567,
+  fontFamily: "Muli,sans-serif",
+  fontWeight: 700,
 };
 
 themeInstance.typography.h2 = {
@@ -56,6 +58,10 @@ themeInstance.typography.body1 = {
   fontSize: "16px",
   fontWeight: 400,
   opacity: "0.9",
+};
+
+themeInstance.typography.subtitle1 = {
+  fontFamily: "Montserrat, sans-serif",
 };
 
 const useStyles = makeStyles((theme) => ({

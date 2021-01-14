@@ -8,7 +8,7 @@ import {
   Collapse,
   Grid,
 } from "@material-ui/core";
-import { styled, createMuiTheme, makeStyles } from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   paperContainer: {

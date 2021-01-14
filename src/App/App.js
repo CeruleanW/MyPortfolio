@@ -7,6 +7,7 @@ import Home from "../components/Home/Home";
 import Projects from "../components/Project/Projects";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Contact from "../components/Contact/Contact";
+import { useTheme } from "@material-ui/styles";
 
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
@@ -20,6 +21,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
 export default function App() {
+  const theme = useTheme();
+  
   // States
   const initialState = () => getData("data") || [];
   const [state, setState] = useState(initialState);
@@ -41,6 +44,7 @@ export default function App() {
   const statementOfOriginality =
     "This portfolio is the work of Yi Yang. Please do not copy without permission. Some of the exhibits, work samples, and/or service samples are the proprietary property of the organization whose name appears on the document. Each has granted permission for this product to be used as a demonstration of my work";
   console.log(statementOfOriginality);
+
   //Routing tabs
   const allTabs = ["/", "/projects", "/aboutme", "/contact"];
 
@@ -48,7 +52,7 @@ export default function App() {
     <Theme>
       <CssBaseline />
       <BrowserRouter>
-        <div className="App">
+        <div className="App" style={{minHeight: `calc(100vh - 56px)`,}} >
           <Nav routes={allTabs}>
             <Route
               path="/"
@@ -66,8 +70,8 @@ export default function App() {
             <Route path={allTabs[2]} render={() => <AboutMe />} />
             <Route path={allTabs[3]} render={() => <Contact />} />
           </Switch>
-          <Footer />
         </div>
+        <Footer />
       </BrowserRouter>
     </Theme>
   );

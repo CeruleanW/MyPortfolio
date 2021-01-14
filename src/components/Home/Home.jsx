@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { Typography, Box, Container, Avatar, Grid } from "@material-ui/core";
-import mainPhoto from "../../assets/img/avatar1.jpg";
+import { Typography, Box, Container, Grid } from "@material-ui/core";
+import mainPhoto from "../../assets/img/avatar3.jpg";
 import Image from "material-ui-image";
-import Description from "./Description";
-
+// import Description from "./Description";
 import { makeStyles } from "@material-ui/core/styles";
 import More from "./More";
 import ProjectsCarousel from "./ProjectsCarousel";
+import DotBox from './DotBox';
 
 const useStyles = makeStyles((theme) => ({
   maincontent: {
@@ -27,14 +27,10 @@ const useStyles = makeStyles((theme) => ({
   frame: {
     [theme.breakpoints.up("md")]: {
       paddingLeft: theme.spacing(10),
-    }
-  },
-  text: {
-    // paddingTop: theme.spacing(10),
-    // paddingBottom: theme.spacing(10),
+    },
   },
   halfBackground: {
-    background: `linear-gradient(to top, ${theme.palette.secondary.light} 50%, transparent 50%)`, //secondary.light
+    background: `linear-gradient(to top, ${theme.palette.secondary.light} 50%, transparent 50%)`,
   },
 }));
 
@@ -44,9 +40,6 @@ export default function Home() {
 
   return (
     <Box width={1} className={classes.frame}>
-      {/* <Avatar className={classes.large} >
-                        <img src={mainPhoto} alt="Yi Yang's profile" className={classes.img}/>
-                    </Avatar > */}
       <Container maxWidth="xl" className={classes.maincontent}>
         <Grid container>
           <Grid item xs={12} md={6}>
@@ -56,27 +49,28 @@ export default function Home() {
             <Box>
               <Typography variant="h1">
                 <span className={classes.halfBackground}>
-                  Full-stack Developer
+                  Full-stack Web Developer
                 </span>
               </Typography>
             </Box>
             <Typography variant="subtitle1">
               I produce elegant and performant code at Toronto, Canada.
             </Typography>
-            <Box my={3}>
+            <Box mt={14}>
               <More height={40} />
             </Box>
-            <Box>
+            <Box mt={3}>
               <ProjectsCarousel />
             </Box>
           </Grid>
-          <Grid container item xs={12} md={6} alignItems={"flex-end"}>
-            <Grid item xs={12}>
-              <Box mx={10} mt={3}>
-                <Image src={mainPhoto} alt="Yi Yang's profile" cover={true} />
+          {/* <Grid container item xs={12} md={6} alignItems={"flex-end"}> */}
+            <Grid item xs={12} md={6}>
+              <Box mx={10} mt={3} maxWidth={500} maxHeight={800} >
+                <Image src={mainPhoto} alt="Yi Yang's profile" imageStyle={{width: "100%"}} aspectRatio={0.75}/>
+                <DotBox />
               </Box>
             </Grid>
-          </Grid>
+          {/* </Grid> */}
         </Grid>
       </Container>
     </Box>

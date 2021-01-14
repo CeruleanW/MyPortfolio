@@ -124,7 +124,7 @@ export default function ProjectSection(props) {
       <section>
         <Grid
           container
-          spacing={2}
+          // spacing={2}
           justify={"center"}
           alignItems={"center"}
           className={classes.gridContainer}
