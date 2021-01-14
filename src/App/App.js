@@ -37,6 +37,10 @@ export default function App() {
     setData(newData);
   }, [state]);
 
+  // Statement of Originality: A paragraph stating that this is your work and that it is confidential. also indicate if any parts of the portfolio should not be copied.
+  const statementOfOriginality =
+    "This portfolio is the work of Yi Yang. Please do not copy without permission. Some of the exhibits, work samples, and/or service samples are the proprietary property of the organization whose name appears on the document. Each has granted permission for this product to be used as a demonstration of my work";
+  console.log(statementOfOriginality);
   //Routing tabs
   const allTabs = ["/", "/projects", "/aboutme", "/contact"];
 

@@ -1,30 +1,72 @@
-// About Me
-// name
-// photo
-// description: what you’ve done and where you hope to go in your career
 // Work Philosophy: A brief description of your beliefs about yourself and the industry.
-
 
 // include a contact form and your social media channels.
 // about this site
-import React, { Component } from 'react';
-import profilePhoto from './profilePhoto.JPG';
+import React from "react";
+import profilePhoto from "./profilePhoto.JPG";
+import { Typography, Box, Grid, Container } from "@material-ui/core";
+import Description from "./../Home/Description";
+import Image from "material-ui-image";
+import { makeStyles } from "@material-ui/core/styles";
+import MyStory from "./MyStory";
+import MySkills from "./MySkills";
 
-// Statement of Originality: A paragraph stating that this is your work and that it is confidential. also indicate if any parts of the portfolio should not be copied.
-const statementOfOriginality = 'This portfolio is the work of Yi Yang. Please do not copy without permission. Some of the exhibits, work samples, and/or service samples are the proprietary property of the organization whose name appears on the document. Each has granted permission for this product to be used as a demonstration of my work';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: theme.spacing(10),
+    [theme.breakpoints.up("md")]: {},
+  },
+}));
 
+const Title = (props) => {
+  return <Typography variant={"h1"}>{props.children}</Typography>;
+};
 
-export default class AboutMe extends Component {
-    render() {
-        return (
-            <>
-                <h1>About Me</h1>
-                <div>
-                Yi Yang is a web developer originally from Zhuhai, China, but now living in Toronto, Canada. He just graduted from York University.
-                    {/* <h2>Statement of Originality</h2>
-                    <p>{statementOfOriginality}</p> */}
-                </div>
-            </>
-        )
-    }
+const Section = (props) => {
+  return <Box my={13}>{props.children}</Box>;
+};
+
+export default function AboutMe() {
+  const classes = useStyles();
+
+  return (
+    <>
+      <Container>
+        <Grid
+          container
+          justify={"center"}
+          className={classes.root}
+          alignItems={"center"}
+          spacing={8}
+        >
+          <Grid item lg={5}>
+            <Box display={"flex"}>
+              <Box width={50} bgcolor={"#5f9ea085"} mr={3}> </Box>
+              <Box flexGrow={1}>
+                <Description>HEY THERE!</Description>
+                <Title>I'm Yi Yang</Title>
+                <Box mt={2}>
+                  <Description>
+                    Let me Yi-xpress myself a little. Please have a seat. I'll
+                    try to make it not so boring.
+                  </Description>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item lg={7}>
+            <Box maxWidth={600}>
+              <Image src={profilePhoto} alt="Profile of Yi Yang" cover />
+            </Box>
+          </Grid>
+        </Grid>
+        <Section>
+          <MyStory />
+        </Section>
+        <Section>
+          <MySkills />
+        </Section>
+      </Container>
+    </>
+  );
 }

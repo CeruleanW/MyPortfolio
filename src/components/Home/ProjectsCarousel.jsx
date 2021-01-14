@@ -34,9 +34,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//TODO:
-// get cards from projects list
-
 function Media(props) {
   const { onlyImg } = props;
 

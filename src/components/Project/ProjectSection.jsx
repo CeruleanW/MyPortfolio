@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
   tech: {
     width: "auto",
     borderRadius: "6pt",
-    // marginRight: "1vw",
     color: theme.palette.text.primary,
     backgroundColor: theme.palette.text.contrastBackground,
   },

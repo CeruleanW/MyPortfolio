@@ -39,7 +39,7 @@ export default function Nav(props) {
               className={`${classes.navTitlePadding} ${classes.navTitleFont}`}
               noWrap
             >
-              &#10023; Y. Yang
+              &#10023; Y.Yang
             </Typography>
           </Box>
           {props.children}
