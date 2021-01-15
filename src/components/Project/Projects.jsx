@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import ProjectSection from "./ProjectSection";
 import data from '../../data/projects.json';
 
-// be as captivating as possible
 // Structure:
 // - title
 // - function
 // - explanations of projects to illustrate how you handle problems
 
+const projectData = data.projects;
+
 export default function Projects(props) {
-  const projectData = data.projects;
 
   return (
     <div>

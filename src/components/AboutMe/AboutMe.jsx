@@ -34,6 +34,7 @@ const Section = (props) => {
   return <Box my={8}>{props.children}</Box>;
 };
 
+//TODO: Add resume download
 export default function AboutMe() {
   const classes = useStyles();
   const theme = useTheme();

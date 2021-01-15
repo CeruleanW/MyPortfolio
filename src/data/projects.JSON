@@ -5,7 +5,7 @@
       "subtitle": "A website developed for the sunday school of Zion Alliance Church",
       "image": "cew.png",
       "techs": ["React.js", "Material UI", "React Router"],
-      "link": ""
+      "link": "https://cew.onrender.com/"
     },
     {
       "title": "Google Photos Search Enhancer",
