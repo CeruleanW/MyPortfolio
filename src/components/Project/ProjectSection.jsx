@@ -121,12 +121,6 @@ export default function ProjectSection(props) {
   const imagePath = process.env.PUBLIC_URL + "/img/" + image;
 
   const classes = useStyles();
-  // useEffect(() => {
-  //   // componentWillUnmount
-  //   return () => {
-  //     setIsLoaded(true);
-  //   }
-  // });
 
   const handleClick = () => {};
 
@@ -138,8 +132,6 @@ export default function ProjectSection(props) {
           justify={"center"}
           alignItems={"center"}
           className={classes.gridContainer}
-          onMouseEnter={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
         >
           {isRightNarrow ? (
             <Grid item lg={6} xs={11}>
