@@ -15,7 +15,7 @@ const themeInstance = createMuiTheme({
     secondary: {
       light: "#DCEAEB",
       main: "#88BBBC",
-      // dark: will be calculated from palette.secondary.main,
+      dark: "#055158",
       contrastText: "#fff",
     },
     text: {
@@ -40,16 +40,22 @@ themeInstance.typography.h1 = {
     fontSize: "2.8rem",
   },
   lineHeight: 1.567,
-  fontFamily: "Muli,sans-serif",
+  fontFamily: "'Raleway', sans-serif;",
   fontWeight: 700,
 };
 
 themeInstance.typography.h2 = {
   fontSize: "1.5rem",
+  fontFamily: "'Raleway', sans-serif;",
   [themeInstance.breakpoints.up("md")]: {
-    fontSize: "1.9rem",
+    fontSize: "2rem",
   },
   lineHeight: 1.567,
+};
+
+themeInstance.typography.h5 = {
+  fontSize: "1.5rem",
+  fontFamily: "Muli, sans-serif",
 };
 
 themeInstance.typography.body1 = {

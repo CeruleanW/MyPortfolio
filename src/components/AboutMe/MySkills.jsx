@@ -8,13 +8,28 @@ import {
   ListItem,
   Grid,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
+  header: {
+    fontSize: "1rem",
+    fontFamily: "Muli,sans-serif",
+    color: theme.palette.secondary.dark,
+  },
+}));
 
 const SkillSet = (props) => {
   const { title } = props;
+  const classes = useStyles();
 
   return (
     <Grid item lg={3}>
-      <List subheader={<ListSubheader>{title}</ListSubheader>}>
+      <List
+        subheader={
+          <ListSubheader className={classes.header} disableGutters>
+            {title}
+          </ListSubheader>
+        }
+      >
         {props.children}
       </List>
     </Grid>
@@ -24,20 +39,24 @@ const SkillSet = (props) => {
 const SimpleSkill = (props) => {
   return (
     <ListItem>
-      <span style={{ color: "cadetblue", marginRight: "6px" }}>●</span>
-      {props.children}
+      <Typography><span style={{ color: "cadetblue", marginRight: "6px" }}>●</span>
+      {props.children}</Typography>
     </ListItem>
   );
 };
 const ExpandableSkill = (props) => {
-  return <SimpleSkill>{props.children}</SimpleSkill>;
+  return (
+    <SimpleSkill>
+      {props.children}
+    </SimpleSkill>
+  );
 };
 
 export default function MySkills() {
   return (
     <>
       <Heading>My Skills</Heading>
-      <Grid container justify={"center"}>
+      <Grid container justify={"space-between"}>
         <SkillSet title={"Coding Language"}>
           <ExpandableSkill>Java</ExpandableSkill>
           <ExpandableSkill>JavaScript</ExpandableSkill>

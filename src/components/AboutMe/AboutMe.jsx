@@ -3,17 +3,25 @@
 // include a contact form and your social media channels.
 // about this site
 import React from "react";
-import profilePhoto from "./profilePhoto.JPG";
-import { Typography, Box, Grid, Container } from "@material-ui/core";
+import profilePhoto from "../../assets/img/JJH00191.JPG";
+import {
+  Typography,
+  Box,
+  Grid,
+  Container,
+  useMediaQuery,
+} from "@material-ui/core";
 import Description from "./../Home/Description";
 import Image from "material-ui-image";
 import { makeStyles } from "@material-ui/core/styles";
 import MyStory from "./MyStory";
 import MySkills from "./MySkills";
+import { useTheme } from "@material-ui/styles";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(6),
     [theme.breakpoints.up("md")]: {},
   },
 }));
@@ -23,11 +31,20 @@ const Title = (props) => {
 };
 
 const Section = (props) => {
-  return <Box my={13}>{props.children}</Box>;
+  return <Box my={8}>{props.children}</Box>;
 };
 
 export default function AboutMe() {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"), {
+    defaultMatches: true,
+  });
+  const variants = {
+    animate: { opacity: 1, x: 0 },
+    right: { opacity: 0, x: 1000 },
+    left: { opacity: 0, x: -1000 },
+  };
 
   return (
     <>
@@ -37,32 +54,49 @@ export default function AboutMe() {
           justify={"center"}
           className={classes.root}
           alignItems={"center"}
-          spacing={8}
+          spacing={isMobile ? 2 : 8}
         >
           <Grid item lg={5}>
-            <Box display={"flex"}>
-              <Box width={50} bgcolor={"#5f9ea085"} mr={3}> </Box>
-              <Box flexGrow={1}>
-                <Description>HEY THERE!</Description>
-                <Title>I'm Yi Yang</Title>
-                <Box mt={2}>
-                  <Description>
-                    Let me Yi-xpress myself a little. Please have a seat. I'll
-                    try to make it not so boring.
-                  </Description>
+            <motion.div
+              initial="left"
+              animate="animate"
+              variants={variants}
+              transition={{ duration: 1 }}
+            >
+              <Box display={"flex"} mb={3}>
+                <Box width={50} bgcolor={"#5f9ea085"} mr={3}></Box>
+                <Box flexGrow={1}>
+                  <Description>HEY THERE!</Description>
+                  <Title>I'm Yi Yang</Title>
+                  <Box mt={2}>
+                    <Description>
+                      Let me Yi-xpress myself a little. Please have a seat. I'll
+                      try to make it not so boring.
+                    </Description>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
+              <Box maxWidth={600}>
+                <Image
+                  src={profilePhoto}
+                  alt="Profile of Yi Yang"
+                  cover
+                  disableTransition
+                />
+              </Box>
+            </motion.div>
           </Grid>
-          <Grid item lg={7}>
-            <Box maxWidth={600}>
-              <Image src={profilePhoto} alt="Profile of Yi Yang" cover />
-            </Box>
+          <Grid container item lg={7}>
+          <motion.div
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{ duration: 1, delay: 1 }}
+            >
+            <Box mt={isMobile ? 0 : 22}>
+              <MyStory />
+            </Box> </motion.div>
           </Grid>
         </Grid>
-        <Section>
-          <MyStory />
-        </Section>
         <Section>
           <MySkills />
         </Section>

@@ -13,9 +13,6 @@ export default function NavTabs(props) {
             'aria-controls': `simple-tabpanel-${index}`,
         };
     }
-    // const handleCallToRouter = (value) => {
-    //     props.history.push(value);
-    // }
 
     return (
         <Tabs value={props.value} onChange={handleChange} centered aria-label="navigation tabs">

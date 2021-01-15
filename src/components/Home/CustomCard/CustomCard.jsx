@@ -94,6 +94,7 @@ export default function CustomCard(props) {
               <Typography
                 gutterBottom
                 variant="h5"
+                component={"h2"}
                 align="center"
               >
                 {title}

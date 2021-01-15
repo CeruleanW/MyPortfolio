@@ -13,6 +13,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import Share from "./Share";
 import { useTheme } from "@material-ui/styles";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => {
   const py = theme.spacing(10);
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => {
     },
     submit: {
       borderRadius: "0",
-      marginTop: theme.spacing(1)
+      marginTop: theme.spacing(1),
     },
     root: {
       padding: `${py}px ${theme.spacing(8)}px`,
@@ -74,48 +75,50 @@ export default function Contact(props) {
         </Typography>
       </Box>
       <Box maxWidth={850} mt={4}>
-        <form action="#">
-          <Grid container justify="center">
-            <Grid container item spacing={isMobile ? 0 : 4}>
-              <Grid item xs={12} sm={6}>
-                <SimpleTextField label="Name" />
+        <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+          <form action="#">
+            <Grid container justify="center">
+              <Grid container item spacing={isMobile ? 0 : 4}>
+                <Grid item xs={12} sm={6}>
+                  <SimpleTextField label="Name" />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <SimpleTextField label="Email" />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <SimpleTextField label="Email" />
+              <Grid item xs={12}>
+                <TextField
+                  label={"Message"}
+                  variant="filled"
+                  margin="normal"
+                  required
+                  fullWidth
+                  color={"secondary"}
+                  multiline={true}
+                  rows={5}
+                />
               </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                label={"Message"}
-                variant="filled"
-                margin="normal"
-                required
-                fullWidth
-                color={"secondary"}
-                multiline={true}
-                rows={5}
-              />
-            </Grid>
-          </Grid>
-          <Button
-            className={classes.submit}
-            variant="contained"
-            color="primary"
-            size="large"
-            endIcon={""}
-            href={""}
-            target="_blank"
-            rel="noopener"
-          >
-            Submit
-          </Button>
-        </form>
+            <Button
+              className={classes.submit}
+              variant="contained"
+              color="primary"
+              size="large"
+              endIcon={""}
+              href={""}
+              target="_blank"
+              rel="noopener"
+            >
+              Submit
+            </Button>
+          </form>
+        </motion.div>
       </Box>
       <Box mt={18} width={120}>
         {/* <Typography>
           Email: yyang.techie#gmail.com {"(Please replace # with @)"}
         </Typography> */}
-        <Share text={"test"} />
+        <Share text={""} />
       </Box>
     </Box>
   );

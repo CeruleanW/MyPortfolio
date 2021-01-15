@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import NavTabs from "../components/NavTabs";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from "../components/Home/Home";
 import Projects from "../components/Project/Projects";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Contact from "../components/Contact/Contact";
-import { useTheme } from "@material-ui/styles";
 
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-
+import { AnimatePresence } from "framer-motion";
 import Theme from "../components/Theme";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+// import Routes from "./Routes";
 
 // Sections
 // - Career Goals: Your professional goals for the next five years.
@@ -21,8 +20,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
 export default function App() {
-  const theme = useTheme();
-  
   // States
   const initialState = () => getData("data") || [];
   const [state, setState] = useState(initialState);
@@ -52,7 +49,7 @@ export default function App() {
     <Theme>
       <CssBaseline />
       <BrowserRouter>
-        <div className="App" style={{minHeight: `calc(100vh - 56px)`,}} >
+        <div className="App" style={{ minHeight: `calc(100vh - 56px)` }}>
           <Nav routes={allTabs}>
             <Route
               path="/"
@@ -63,13 +60,18 @@ export default function App() {
               )}
             />
           </Nav>
-
-          <Switch>
-            <Route exact path={allTabs[0]} render={() => <Home />} />
-            <Route path={allTabs[1]} render={() => <Projects />} />
-            <Route path={allTabs[2]} render={() => <AboutMe />} />
-            <Route path={allTabs[3]} render={() => <Contact />} />
-          </Switch>
+          <Route
+            render={({ location }) => (
+              <AnimatePresence exitBeforeEnter initial={false}>
+                <Switch key={location.pathname}>
+                  <Route exact path={allTabs[0]} render={() => <Home />} />
+                  <Route path={allTabs[1]} render={() => <Projects />} />
+                  <Route path={allTabs[2]} render={() => <AboutMe />} />
+                  <Route path={allTabs[3]} render={() => <Contact />} />
+                </Switch>
+              </AnimatePresence>
+            )}
+          />
         </div>
         <Footer />
       </BrowserRouter>

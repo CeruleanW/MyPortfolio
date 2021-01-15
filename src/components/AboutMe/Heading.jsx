@@ -1,10 +1,12 @@
 import React from 'react'
 import {
-  Typography
+  Typography, Box
 } from "@material-ui/core";
 
 export default function Heading(props) {
   return (
-    <Typography variant={"h2"}>{props.children}</Typography>
+    <Box mb={2}>
+      <Typography variant={"h2"}>{props.children}</Typography>
+    </Box>
   )
 }
