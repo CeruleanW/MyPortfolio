@@ -20,7 +20,7 @@ const themeInstance = createMuiTheme({
     },
     text: {
       primary: "#373737",
-      secondary: "#7E7E7E",
+      secondary: "#505050",
       contrastBackground: "#65FFC9",
     },
 

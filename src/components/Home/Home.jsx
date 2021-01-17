@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Typography, Box, Container, Grid } from "@material-ui/core";
-import mainPhoto from "../../assets/img/avatar4.png";
+import mainPhoto from "../../assets/img/avatar2.png";
 import Image from "material-ui-image";
 // import Description from "./Description";
 import { makeStyles } from "@material-ui/core/styles";
@@ -35,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//TODO: Add social media links
 export default function Home() {
   //Styles
   const classes = useStyles();
@@ -50,20 +52,25 @@ export default function Home() {
         <Grid container>
           <Grid item xs={12} md={6}>
             <Typography variant="h1">
-              Hi! <span>I'm</span> Yi Yang{" "}
+              Hi! <span>I'm</span> Yi Yang
             </Typography>
-            <Box>
+            <Box width={"fit-content"}>
               <Typography variant="h1">
                 <span className={classes.halfBackground}>
-                  Full-stack Web Developer
+                Full-stack Web Developer
                 </span>
               </Typography>
-            </Box>
-            <motion.div animate={{opacity: 1}} initial={{opacity: 0}} transition={{ duration: 1, delay: 1 }}>
-              <Typography variant="subtitle1">
-                I produce elegant and performant code at Toronto, Canada.
+              <motion.div
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              <Typography variant="subtitle1" align={"left"}>
+                I am coding at Toronto, Canada.
               </Typography>
             </motion.div>
+            </Box>
+
             <motion.div
               initial="left"
               animate="animate"

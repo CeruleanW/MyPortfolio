@@ -7,12 +7,13 @@ import Home from "../components/Home/Home";
 import Projects from "../components/Project/Projects";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Contact from "../components/Contact/Contact";
-
 import { AnimatePresence } from "framer-motion";
 import Theme from "../components/Theme";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 // import Routes from "./Routes";
+import ProjectDetailPage from './../components/ProjectDetailPage/ProjectDetailPage';
+import ScrollToTop from './ScrollToTop';
 
 // Sections
 // - Career Goals: Your professional goals for the next five years.
@@ -65,6 +66,7 @@ export default function App() {
               <AnimatePresence exitBeforeEnter initial={false}>
                 <Switch key={location.pathname}>
                   <Route exact path={allTabs[0]} render={() => <Home />} />
+                  <Route path={`${allTabs[1]}/:id`} render={() => <ProjectDetailPage />} />
                   <Route path={allTabs[1]} render={() => <Projects />} />
                   <Route path={allTabs[2]} render={() => <AboutMe />} />
                   <Route path={allTabs[3]} render={() => <Contact />} />
@@ -74,7 +76,9 @@ export default function App() {
           />
         </div>
         <Footer />
+        <ScrollToTop />
       </BrowserRouter>
     </Theme>
   );
 }
+

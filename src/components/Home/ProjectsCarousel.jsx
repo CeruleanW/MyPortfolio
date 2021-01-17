@@ -68,7 +68,7 @@ export default function ProjectsCarousel(props) {
               <Slider className={classes.slider}>
                 {projectList.map((project, index) => (
                   <Slide key={"slide-" + index} index={index}>
-                    <CustomCard key={"card-" + index} {...project} bg={project.image} />
+                    <CustomCard key={"card-" + index} {...project} image={project.image} />
                   </Slide>
                 ))}
               </Slider>

@@ -4,10 +4,10 @@ import { Typography, Paper, Box, Button, Grid, Chip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./ProjectSection.css";
 import { motion } from "framer-motion";
-// Single project section
-//TODO:
-// button links
+import { Link, useRouteMatch } from "react-router-dom";
 
+
+// Single project section
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
     // maxWidth: "90vw",
@@ -44,11 +44,14 @@ const useStyles = makeStyles((theme) => ({
 const scaleAni = { whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } };
 
 const ProjectCard = (props) => {
+  const { id, imagePath } = props;
+  const { url } = useRouteMatch();
   const classes = useStyles();
+
   //set background image
   const styles = {
     bgImage: {
-      backgroundImage: `url(${props.imagePath})`,
+      backgroundImage: `url(${imagePath})`,
       backgroundRepeat: "no-repeat" /* Do not repeat the image */,
       backgroundSize:
         "cover" /* Resize the background image to cover the entire container */,
@@ -58,7 +61,9 @@ const ProjectCard = (props) => {
   return (
     <motion.div {...scaleAni}>
       <Box>
-        <Paper style={styles.bgImage} className={classes.paperContainer} />
+        <Link to={`${url}/${id}`}>
+          <Paper style={styles.bgImage} className={classes.paperContainer} />
+        </Link>
       </Box>
     </motion.div>
   );
@@ -66,7 +71,8 @@ const ProjectCard = (props) => {
 
 const ProjectText = (props) => {
   const classes = useStyles();
-  const { isRightNarrow, onAppear, title, subtitle } = props;
+  const { isRightNarrow, title, subtitle, id } = props;
+  const { url } = useRouteMatch();
 
   return (
     <Box maxWidth={500}>
@@ -101,10 +107,10 @@ const ProjectText = (props) => {
       >
         <motion.div {...scaleAni}>
           <Button
-            onClick={props.handleClick}
             variant="contained"
             color="primary"
             size="large"
+            component={Link} to={`${url}/${id}`}
           >
             Check it out!
           </Button>
@@ -115,14 +121,16 @@ const ProjectText = (props) => {
 };
 
 export default function ProjectSection(props) {
-  const { image, title, techs, isRightNarrow, subtitle } = props;
+  const classes = useStyles();
+  const { image, title, techs, isRightNarrow, subtitle, id } = props;
+
   const [isHover, setIsHover] = useState(false);
   // const [isLoaded, setIsLoaded] = useState(false);
-  const imagePath = process.env.PUBLIC_URL + "/img/" + image;
 
-  const classes = useStyles();
+  const imagePath = process.env.PUBLIC_URL + "/img/" + image; // local image path
 
-  const handleClick = () => {};
+
+  // const handleClick = () => {};
 
   return (
     <>
@@ -137,18 +145,15 @@ export default function ProjectSection(props) {
             <Grid item lg={6} xs={11}>
               <ProjectCard
                 onAppear={true}
-                handleClick={handleClick}
                 imagePath={imagePath}
+                {...props}
               />
             </Grid>
           ) : (
             <Grid item lg={4} xs={11}>
               <ProjectText
-                title={title}
-                techs={techs}
-                subtitle={subtitle}
                 onAppear={true}
-                isRightNarrow={isRightNarrow}
+                {...props}
               />
             </Grid>
           )}
@@ -156,19 +161,17 @@ export default function ProjectSection(props) {
           {isRightNarrow ? (
             <Grid item lg={4} xs={11}>
               <ProjectText
-                title={title}
-                techs={techs}
-                subtitle={subtitle}
                 onAppear={true}
                 isRightNarrow={isRightNarrow}
+                {...props}
               />
             </Grid>
           ) : (
             <Grid item lg={6} xs={11}>
               <ProjectCard
                 onAppear={true}
-                handleClick={handleClick}
                 imagePath={imagePath}
+                {...props}
               />
             </Grid>
           )}

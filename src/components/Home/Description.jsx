@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-import { Typography, Box } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   simple: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Description(props) {
   const classes = useStyles();
   return (
-    <Typography color="textSecondary">
+    <Typography color="textSecondary" align={props.align}>
       {props.text}
       {props.children}
     </Typography>

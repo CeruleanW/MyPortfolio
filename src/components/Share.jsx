@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -11,13 +12,23 @@ import {
   WhatsappIcon,
   LinkedinIcon
 } from "react-share";
-//https://www.npmjs.com/package/react-share
 import { Box } from "@material-ui/core";
 
+const useStyles = makeStyles({
+
+});
+
+//github, linkedin, facebook
+
 export default function Share(props) {
+  const github = props.github;
+  const linkedin = props.linkedin;
+  const facebook = props.facebook;
   const {text} = props;
   const iconSize = 26;
   const shareUrl = window.location.href;
+
+  const [count, setCount] = useState(0);
 
   return (
     <Box display={"flex"} justifyContent={"space-between"}>

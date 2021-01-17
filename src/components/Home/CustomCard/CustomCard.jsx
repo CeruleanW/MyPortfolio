@@ -7,13 +7,13 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Collapse,
   Box,
   Grid,
 } from "@material-ui/core";
 import { PropTypes } from "prop-types";
 import defaultImage from "./SD-default-image.png";
 import WithCenter from "../../WithCenter";
+import { Link } from "react-router-dom";
 
 //Styles
 import { makeStyles } from "@material-ui/core/styles";
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginLeft: theme.spacing(1),
-  }
+  },
 }));
 
 CustomCard.defaultProps = {
@@ -71,7 +71,7 @@ const ButtonAtBottom = (props) => {
 
 export default function CustomCard(props) {
   const classes = useStyles();
-  const { title, subtitle, bg } = props;
+  const { title, subtitle, image, id } = props;
 
   function handleClick() {
     //set isLoading=true
@@ -82,10 +82,10 @@ export default function CustomCard(props) {
   return (
     <>
       <Card elevation={3} className={classes.card}>
-        <CardActionArea>
+        <CardActionArea component={Link} to={`/projects/${id}`}>
           <CardMedia
             className={classes.media}
-            image={process.env.PUBLIC_URL + '/img/' + bg}
+            image={process.env.PUBLIC_URL + "/img/" + image}
             cover={true}
             title={title}
           />
@@ -113,7 +113,7 @@ export default function CustomCard(props) {
             </Box>
           </CardContent>
         </CardActionArea>
-        <Collapse />
+        {/* <Collapse /> */}
       </Card>
     </>
   );

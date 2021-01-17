@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Share from "./Share";
+import SocialMedia from "./SocialMedia";
 import { useTheme } from "@material-ui/styles";
 import { motion } from "framer-motion";
 
@@ -118,18 +118,9 @@ export default function Contact(props) {
         {/* <Typography>
           Email: yyang.techie#gmail.com {"(Please replace # with @)"}
         </Typography> */}
-        <Share text={""} />
+        <SocialMedia text={""} />
       </Box>
     </Box>
   );
 }
 
-{
-  /* <TextareaAutosize
-rowsMin={10}
-aria-label="message input"
-placeholder="Please enter your message here"
-className={classes.textArea}
-label={"Message"}
-/> */
-}
