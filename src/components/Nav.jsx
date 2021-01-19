@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
-import { IconButton, Typography, Toolbar, Box } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Typography, Toolbar, Box, Hidden } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
+import SimpleMenu from './SimpleMenu';
 
 const navTitleFont = "'Exo', sans-serif";
 
@@ -42,16 +42,11 @@ export default function Nav(props) {
               &#10023; Y.Yang
             </Typography>
           </Box>
-          {props.children}
+          <Hidden smDown>{props.children}</Hidden>
           <Box style={{ flex: 1 }} />
-          <IconButton
-            edge="start"
-            className={""}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
+          <Hidden mdUp>
+            <SimpleMenu routes={props.routes} pageTitles={props.pageTitles}/>
+          </Hidden>
         </Toolbar>
       </AppBar>
     </>

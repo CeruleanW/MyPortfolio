@@ -45,18 +45,19 @@ export default function App() {
 
   //Routing tabs
   const allTabs = ["/", "/projects", "/aboutme", "/contact"];
+  const pageTitles = ["Home", "Projects", "About me", "Contact"]
 
   return (
     <Theme>
       <CssBaseline />
       <BrowserRouter>
         <div className="App" style={{ minHeight: `calc(100vh - 56px)` }}>
-          <Nav routes={allTabs}>
+          <Nav routes={allTabs} pageTitles={pageTitles}>
             <Route
               path="/"
               render={({ location }) => (
                 <>
-                  <NavTabs routes={allTabs} value={location.pathname} />
+                  <NavTabs routes={allTabs} value={location.pathname} pageTitles={pageTitles}/>
                 </>
               )}
             />

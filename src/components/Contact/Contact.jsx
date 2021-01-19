@@ -108,6 +108,7 @@ export default function Contact(props) {
               href={""}
               target="_blank"
               rel="noopener"
+              disabled
             >
               Submit
             </Button>

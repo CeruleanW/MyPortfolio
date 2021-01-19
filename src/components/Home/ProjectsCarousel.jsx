@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Container, Grid } from "@material-ui/core";
+import React from "react";
+import { Box, Grid } from "@material-ui/core";
 import {
   CarouselProvider,
   Slider,
@@ -34,15 +34,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Media(props) {
-  const { onlyImg } = props;
-
-  return (
-    <>
-      <Box maxWidth={onlyImg ? "30%" : "100%"}>{props.children}</Box>
-    </>
-  );
-}
 
 export default function ProjectsCarousel(props) {
   const classes = useStyles();

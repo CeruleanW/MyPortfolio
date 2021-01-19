@@ -25,7 +25,7 @@
       "techs": ["React.js", "Material UI", "RESTful API", "IndexedDB"],
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50963f0",
       "type": "Personal Project",
-      "live": "http://yiyangdev.me/google-photos-search-enhancer/",
+      "live": "https://ceruleanw.github.io/google-photos-search-enhancer/",
       "repo": "https://github.com/CeruleanW/google-photos-search-enhancer",
       "content": {
         "introduction": "Google Photos Search Enhancer is an application which requests data from Google Photos API, stores them in the client-end storage and search through it. This project improves my skills of dealing with REST APIs, Asynchronous JavaScript (AJAX) and React.js.",
@@ -43,8 +43,8 @@
       "techs": ["React.js", "Semantic UI React", "CSS Module"],
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50283f0",
       "type": "Personal Project",
-      "live": "http://yiyangdev.me/Broken-dream-cafe/",
-      "repo": "https://ceruleanw.github.io/Broken-dream-cafe/",
+      "live": "https://ceruleanw.github.io/Broken-dream-cafe/",
+      "repo": "https://github.com/CeruleanW/Broken-dream-cafe",
       "content": {
         "introduction": "A landing page implemented Responsive design, CSS animation ",
         "goal": "To learn React.js and CSS3 by creating a landing page.",

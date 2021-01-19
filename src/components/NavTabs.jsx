@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function NavTabs(props) {
     const allTabs = props.routes; //["/", "/projects", "/aboutme", "/contact"];
+    
     function handleChange(e) { }
     const a11yProps = (index) => {
         return {
