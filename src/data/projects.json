@@ -1,24 +1,6 @@
 {
   "projects": [
     {
-      "title": "Church Education Website",
-      "subtitle": "A small website developed for the sunday school of Zion Alliance Church",
-      "image": "cew.png",
-      "type": "Independent Project",
-      "techs": ["React.js", "Material UI", "React Router"],
-      "live": "https://cew.onrender.com/",
-      "repo": "https://github.com/CeruleanW/church-eduction-website",
-      "content": {
-        "introduction": "CEW is a static course website I built for the sunday school of Zion Alliance Church, to allow church members to access the course announcements and resources during the pandemic conveniently. It has three main pages for announcement, general courses, and a special lecture serie respectively.",
-        "goal": "The UI of the existing main website was not made for navigating to and displaying various items, which is courses in this case. In fact, it was like hiding these resources in the corner. As we will be mostly interacting remotely in 2021, we need to make the online education resources more accessible",
-        "spotlight": "",
-        "problem": ["Requirements elicitation is the hardest part of this process. Discussing with the client is worthy but not easy. And It's also hard to confirm what data will or won't be privided, what data format should be used with non-techinal people.", "To help the communication, I drew the sketch by paper and pen to show the layout and developed mockup prototype for further discussion, both of which helped a lot for clarifying the requirements."],
-        "lesson": ["I learned a lot of React Router from this project as it is my first React project requires routing to various pages, such as basic Switch, Route, and using Hooks to get URL parameters. When deploying the website, we need to redirect all requests to index.html because the site is just a Single Page Application acting like having multi-pages.", "The process of requirements specification and system design cannot be directly reflected on the end product, but it is fundamental and critical for the end product"]
-      },
-      "id": "eae9e67b-e921-499c-afb2-3137a9867171",
-      "illustrations": ["cew01.png", "cew02.png", "cew03.png"]
-    },
-    {
       "title": "Google Photos Search Enhancer",
       "subtitle": "helps users to search words in the descriptions and filenames in Google Photos Library in any language, to solve the problem that Google Photos only supports search for a set of common words. All the Photo data are stored locally in IndexedDB",
       "image": "gpse.png",
@@ -35,6 +17,24 @@
         "lesson": ["Although React.js provides Context to help the state management and I used it. It would be better if I used a state management tool as Redux"]
       },
       "illustrations": ["gpse01.png","gpse02.png", "gpse03.gif"]
+    },
+    {
+      "title": "Church Education Website",
+      "subtitle": "A small website developed for the sunday school of Zion Alliance Church",
+      "image": "cew.png",
+      "type": "Independent Project",
+      "techs": ["React.js", "Material UI", "React Router"],
+      "live": "https://cew.onrender.com/",
+      "repo": "https://github.com/CeruleanW/church-eduction-website",
+      "content": {
+        "introduction": "CEW is a static course website I built for the sunday school of Zion Alliance Church, to allow church members to access the course announcements and resources during the pandemic conveniently. It has three main pages for announcement, general courses, and a special lecture serie respectively.",
+        "goal": "The UI of the existing main website was not made for navigating to and displaying various items, which is courses in this case. In fact, it was like hiding these resources in the corner. As we will be mostly interacting remotely in 2021, we need to make the online education resources more accessible",
+        "spotlight": "",
+        "problem": ["Requirements elicitation is the hardest part of this process. Discussing with the client is worthy but not easy. And It's also hard to confirm what data will or won't be privided, what data format should be used with non-techinal people.", "To help the communication, I drew the sketch by paper and pen to show the layout and developed mockup prototype for further discussion, both of which helped a lot for clarifying the requirements."],
+        "lesson": ["I learned a lot of React Router from this project as it is my first React project requires routing to various pages, such as basic Switch, Route, and using Hooks to get URL parameters. When deploying the website, we need to redirect all requests to index.html because the site is just a Single Page Application acting like having multi-pages.", "The process of requirements specification and system design cannot be directly reflected on the end product, but it is fundamental and critical for the end product"]
+      },
+      "id": "eae9e67b-e921-499c-afb2-3137a9867171",
+      "illustrations": ["cew01.png", "cew02.png", "cew03.png"]
     },
     {
       "title": "Landing Page - Broken Dream Café",

@@ -52,12 +52,12 @@ export default function Home() {
         <Grid container>
           <Grid item xs={12} md={6}>
             <Typography variant="h1">
-              Hi! <span>I'm</span> Yi Yang
+              Hi! <span>I'm</span> Yi Yang,
             </Typography>
             <Box width={"fit-content"}>
               <Typography variant="h1">
                 <span className={classes.halfBackground}>
-                Full-stack Web Developer
+                A Web Developer
                 </span>
               </Typography>
               <motion.div
@@ -66,7 +66,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 1 }}
             >
               <Typography variant="subtitle1" align={"left"}>
-                I am coding at Toronto, Canada.
+                coding at Toronto, Canada.
               </Typography>
             </motion.div>
             </Box>
