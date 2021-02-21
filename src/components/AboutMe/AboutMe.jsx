@@ -1,7 +1,6 @@
 // Work Philosophy: A brief description of your beliefs about yourself and the industry.
 
 // include a contact form and your social media channels.
-// about this site
 import React from "react";
 import profilePhoto from "../../assets/img/JJH00191.JPG";
 import {
