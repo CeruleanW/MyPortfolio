@@ -69,6 +69,7 @@ export default function Contact(props) {
     console.log(data);
     //submit data to MailerSend Email API
     const requestOptions = createRequestOption(data);
+    console.log(requestOptions);
     await fetch('https://api.mailersend.com/v1/email', requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
@@ -152,8 +153,8 @@ function createRequestOption(data) {
   //   'Cookie',
   //   '__cfduid=d18414ef81bb46bb8b038f62e585ee9d81614206647'
   // );
-  // myHeaders.append('Access-Control-Allow-Origin', 'https://yiyangdev.me');
-  myHeaders.append('Access-Control-Allow-Origin', '*');
+  myHeaders.append('Access-Control-Allow-Origin', 'https://yiyangdev.me');
+  // myHeaders.append('Access-Control-Allow-Origin', '*');
 
   const message = `This is a message from ${data.name}: \n ${data.message} \n Email: ${data.email}`;
   const raw = JSON.stringify({
