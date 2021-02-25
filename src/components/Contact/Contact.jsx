@@ -178,7 +178,7 @@ function createRequestOption(data) {
     headers: myHeaders,
     body: raw,
     redirect: 'follow',
-    mode: 'no-cors',
+    // mode: 'no-cors',
   };
   return requestOptions;
 }
