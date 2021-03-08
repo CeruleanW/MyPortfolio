@@ -72,7 +72,7 @@ export default function AboutMe() {
                   <Title>I'm {FULLNAME}</Title>
                   <Box mt={2}>
                     <Description>
-                      Let me Yi-xpress myself a little. Please have a seat. I'll
+                      Let me express myself a little. Please have a seat. I'll
                       try to make it not so boring.
                     </Description>
                   </Box>
