@@ -9,6 +9,8 @@ import More from "./More";
 import ProjectsCarousel from "./ProjectsCarousel";
 import DotBox from "./DotBox";
 import { motion } from "framer-motion";
+import { CONSTANTS } from '../../data/globals';
+const { FULLNAME } = CONSTANTS;
 
 const useStyles = makeStyles((theme) => ({
   maincontent: {
@@ -52,12 +54,12 @@ export default function Home() {
         <Grid container>
           <Grid item xs={12} md={6}>
             <Typography variant="h1">
-              Hi! <span>I'm</span> Yi Yang,
+              Hi! <span>I'm</span> {FULLNAME},
             </Typography>
             <Box width={"fit-content"}>
               <Typography variant="h1">
                 <span className={classes.halfBackground}>
-                A Web Developer
+                Web Developer
                 </span>
               </Typography>
               <motion.div

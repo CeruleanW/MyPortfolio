@@ -2,7 +2,6 @@ import React from "react";
 import Heading from "./Heading";
 import {
   Typography,
-  Box,
   List,
   ListSubheader,
   ListItem,
@@ -64,12 +63,14 @@ export default function MySkills() {
           <SimpleSkill>Python</SimpleSkill>
         </SkillSet>
         <SkillSet title={"Frameworks & Libs"}>
-          <ExpandableSkill>React.js, React Router</ExpandableSkill>
+          <ExpandableSkill>React.js (React Router)</ExpandableSkill>
+          <ExpandableSkill>React Native</ExpandableSkill>
           <ExpandableSkill>Material UI</ExpandableSkill>
           <SimpleSkill>Jest, JUnit</SimpleSkill>
         </SkillSet>
         <SkillSet title={"Methods & Tools"}>
           <ExpandableSkill>Webpack, NPM</ExpandableSkill>
+          <ExpandableSkill>MongoDB</ExpandableSkill>
           <SimpleSkill>MatLab, R</SimpleSkill>
           <SimpleSkill>Test-Driven Development</SimpleSkill>
         </SkillSet>

@@ -17,6 +17,8 @@ import MyStory from "./MyStory";
 import MySkills from "./MySkills";
 import { useTheme } from "@material-ui/styles";
 import { motion } from "framer-motion";
+import { CONSTANTS } from "../../data/globals";
+const { FULLNAME } = CONSTANTS;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,7 +69,7 @@ export default function AboutMe() {
                 <Box width={50} bgcolor={"#5f9ea085"} mr={3}></Box>
                 <Box flexGrow={1}>
                   <Description>HEY THERE!</Description>
-                  <Title>I'm Yi Yang</Title>
+                  <Title>I'm {FULLNAME}</Title>
                   <Box mt={2}>
                     <Description>
                       Let me Yi-xpress myself a little. Please have a seat. I'll
@@ -79,7 +81,7 @@ export default function AboutMe() {
               <Box maxWidth={600}>
                 <Image
                   src={profilePhoto}
-                  alt="Profile of Yi Yang"
+                  alt={`Profile of ${FULLNAME}`}
                   cover
                   disableTransition
                 />

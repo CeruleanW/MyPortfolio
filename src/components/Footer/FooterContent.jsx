@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { CONSTANTS } from "../../data/globals";
+const { FULLNAME } = CONSTANTS;
 
 const useStyles = makeStyles({
   footerLink: {
@@ -19,7 +21,7 @@ export default function FooterContent() {
           <a className={classes.footerLink}
             href='https://github.com/CeruleanW'
           >
-           Yi Yang
+           {FULLNAME}
           </a>
         </Typography>
       </Box>
