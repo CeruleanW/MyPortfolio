@@ -1,60 +1,35 @@
-# Yi Yang's Portfolio
+![Logo of the project](./public/android-chrome-192x192.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Asher Yang's Portfolio
 
-## Available Scripts
+> That's it. The portfolio has four pages: home, projects, about me, and contact
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Projects
+  * My main projects will be shown here.
+* Contact
+  * The form in this page will send a request to my email service API. Once a valid request is received, an email will be sent to my work email address.
 
-### `npm run build`
+## Links
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Even though this information can be found inside the project on machine-readable
+format like in a .json file, it's good to include a summary of most useful
+links to humans using your project. You can include links like:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Project homepage: https://yiyangdev.me/
+- Repository: https://github.com/CeruleanW/MyPortfolio/
+- Issue tracker: https://github.com/CeruleanW/MyPortfolio/issues
+  - In case of sensitive bugs like security vulnerabilities, please contact
+    my@email.com directly instead of using issue tracker. We value your effort
+    to improve the security and privacy of this project!
+- Related projects:
+  - https://github.com/CeruleanW/google-photos-search-enhancer
+  - https://github.com/CeruleanW/church-eduction-website
+  - https://github.com/CeruleanW/Broken-dream-cafe
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Licensing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The code in this project is licensed under MIT license.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
