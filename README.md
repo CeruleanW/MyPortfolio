@@ -28,6 +28,12 @@ links to humans using your project. You can include links like:
   - https://github.com/CeruleanW/church-eduction-website
   - https://github.com/CeruleanW/Broken-dream-cafe
 
+## Credits
+
+- Material UI
+- Framer motion
+- Pure React Carousel
+- React Router
 
 ## Licensing
 
