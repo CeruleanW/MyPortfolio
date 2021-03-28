@@ -7,7 +7,7 @@ import { PropTypes } from "prop-types";
 
 SimpleMenu.propTypes = {
   routes: PropTypes.array, //routes to switch
-  pageTitles: PropTypes.string // title text to be display in the tabs
+  pageTitles: PropTypes.array // title text to be display in the tabs
 }
 
 export default function SimpleMenu(props) {

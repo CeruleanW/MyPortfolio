@@ -1,10 +1,27 @@
 {
   "projects": [
     {
+      "title": "Plant Light Meter (placeholder)",
+      "subtitle": "A mobile app measures the light intensity to help you find the appropriate location for your indoor plants",
+      "image": "plm01.png",
+      "techs": ["React Native", "Java (Android)", "MongoDB Realm", "Agile/Scrum", "Highcharts"],
+      "id": "365dc79d-45eb-48d1-ad2c-33023b029a33",
+      "type": "Work Project",
+      "repo": "https://github.com/CeruleanW/plant-light-meter",
+      "content": {
+        "introduction": "People get depressed without enough sunlight, so does a plant. With the help of Plant Light Meter, you can measure the illuminance value, collect records for multipel locations, get an estimation for the daily light level. You will find the land of promised sunshine for your plants. There are many light meter apps can measure the light, but this App enables users keep track of all the records it stored. It's not only a light meter, but a indoor plant management helper.",
+        "goal": "Let the user get the daily light intensity level and determine if it is a suitable location for indoor planting",
+        "spotlight": "I built the Minimal Viable Product from scratch in 3 weeks, without any prior technology knowledge in Mobile Development",
+        "problem": ["No available good library in React Native to get light intensity data from the mobile phone. To find a solution for reading required data, I did research about the camera API, ambient light sensor API and tried to use a unpopular library but didn't work. No other simple React Native solution was found. Therefore, I create a native module in the Android source code in Java and successfully get readings from the ambient light sensor", "Troubleshooting for build failures was quite time consuming. Without much knowledge of Android development and Gradle, I usually copy & google the error message, then try the suggestions one by one. After many times trials for different issues, I noticed that a default action could be uninstalling previous version and clean build cache. If it doesn't work, investigate the stack trace and hypothesize potential causes for the failure and try to test those hypotheses will reduce the number and time of trials."],
+        "lesson": ["Being cautious before commit to a new framework/library. In case of JavaScript packages, use npmtrends.com to find statistic data and alternatives beforehand", "Understand theories and stack trace is critical for troubleshooting"]
+      },
+      "illustrations": ["plm03.gif", "plm02.png", "plm01.png"]
+    },
+    {
       "title": "Google Photos Search Enhancer",
       "subtitle": "helps users to search words in the descriptions and filenames in Google Photos Library in any language, to solve the problem that Google Photos only supports search for a set of common words. All the Photo data are stored locally in IndexedDB",
       "image": "gpse.png",
-      "techs": ["React.js", "Material UI", "RESTful API", "IndexedDB"],
+      "techs": ["React.js", "RESTful API", "Material UI", "Webpack", "IndexedDB"],
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50963f0",
       "type": "Personal Project",
       "live": "https://ceruleanw.github.io/google-photos-search-enhancer/",
@@ -23,7 +40,7 @@
       "subtitle": "A small website developed for the sunday school of Zion Alliance Church",
       "image": "cew.png",
       "type": "Independent Project",
-      "techs": ["React.js", "Material UI", "React Router"],
+      "techs": ["React.js", "Material UI", "React Router", "RESTful API"],
       "live": "https://cew.onrender.com/",
       "repo": "https://github.com/CeruleanW/church-eduction-website",
       "content": {
@@ -40,7 +57,7 @@
       "title": "Landing Page - Broken Dream Café",
       "subtitle": "A responsive design landing page for a non-existing restaurant, using React.js, Semantic UI React, and CSS Module",
       "image": "bc.png",
-      "techs": ["React.js", "Semantic UI React", "CSS Module"],
+      "techs": ["React.js", "Semantic UI React", "CSS Module", "HTML", "CSS"],
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50283f0",
       "type": "Personal Project",
       "live": "https://ceruleanw.github.io/Broken-dream-cafe/",
@@ -57,10 +74,10 @@
   ],
   "carouselProjects": [
     {
-      "title": "Landing Page - Broken Dream Café",
-      "subtitle": "A responsive design landing page for a non-existing restaurant, using React.js, Semantic UI React, and CSS Module",
-      "image": "bc.png",
-      "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50283f0"
+      "title": "Plant Light Meter (placeholder)",
+      "subtitle": "A mobile app measures the light intensity to help you find the appropriate location for your indoor plants",
+      "image": "plm.png",
+      "id": "365dc79d-45eb-48d1-ad2c-33023b029a33"
     },
     {
       "title": "Google Photos Search Enhancer",

@@ -9,7 +9,6 @@ import AboutMe from '../components/AboutMe/AboutMe';
 import Contact from '../components/Contact/Contact';
 import { AnimatePresence } from 'framer-motion';
 import Theme from '../components/Theme';
-import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // import Routes from "./Routes";
 import ProjectDetailPage from './../components/ProjectDetailPage/ProjectDetailPage';
@@ -21,10 +20,11 @@ import { CONSTANTS } from '../data/globals';
 // - Would be nice
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
-const { FULLNAME } = CONSTANTS;
+const { STATEMENT } = CONSTANTS;
 //Routing tabs
 const allTabs = ['/', '/projects', '/aboutme', '/contact'];
 const pageTitles = ['Home', 'Projects', 'About me', 'Contact'];
+const statementOfOriginality = STATEMENT;
 
 export default function App() {
   // States
@@ -42,11 +42,10 @@ export default function App() {
     const bmi = state.map((obj) => obj.bmi);
     let newData = { date, bmi };
     setData(newData);
+
+    console.log(statementOfOriginality);
   }, [state]);
 
-  // Statement of Originality: A paragraph stating that this is your work and that it is confidential. also indicate if any parts of the portfolio should not be copied.
-  const statementOfOriginality = `This portfolio is the work of ${FULLNAME}. Please do not copy without permission. Some of the exhibits, work samples, and/or service samples are the proprietary property of the organization whose name appears on the document. Each has granted permission for this product to be used as a demonstration of my work`;
-  console.log(statementOfOriginality);
 
   return (
     <Theme>

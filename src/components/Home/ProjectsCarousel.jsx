@@ -7,12 +7,10 @@ import {
   ButtonBack,
   ButtonNext,
   Dot,
-  DotGroup,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { makeStyles } from "@material-ui/core/styles";
 import CustomCard from "./CustomCard/CustomCard";
-// import { red, blue, green } from "@material-ui/core/colors";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { carouselProjects } from "../../data/projects.json";
