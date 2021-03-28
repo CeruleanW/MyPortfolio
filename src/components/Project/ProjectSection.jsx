@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Typography, Paper, Box, Button, Grid, Chip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./ProjectSection.css";
@@ -122,7 +122,7 @@ const ProjectText = (props) => {
 
 export default function ProjectSection(props) {
   const classes = useStyles();
-  const { image, title, techs, isRightNarrow, subtitle, id } = props;
+  const { image, isRightNarrow} = props;
 
   const [isHover, setIsHover] = useState(false);
   // const [isLoaded, setIsLoaded] = useState(false);

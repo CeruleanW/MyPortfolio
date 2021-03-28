@@ -11,7 +11,6 @@ import data from '../../data/projects.json';
 const projectData = data.projects;
 
 export default function Projects(props) {
-
   return (
     <div>
       {projectData.map((project, index) => {

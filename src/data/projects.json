@@ -3,7 +3,7 @@
     {
       "title": "Plant Light Meter (placeholder)",
       "subtitle": "A mobile app measures the light intensity to help you find the appropriate location for your indoor plants",
-      "image": "plm01.png",
+      "image": "plm.png",
       "techs": ["React Native", "Java (Android)", "MongoDB Realm", "Agile/Scrum", "Highcharts"],
       "id": "365dc79d-45eb-48d1-ad2c-33023b029a33",
       "type": "Work Project",
