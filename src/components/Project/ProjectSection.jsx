@@ -126,11 +126,7 @@ export default function ProjectSection(props) {
 
   const [isHover, setIsHover] = useState(false);
   // const [isLoaded, setIsLoaded] = useState(false);
-
   const imagePath = process.env.PUBLIC_URL + "/img/" + image; // local image path
-
-
-  // const handleClick = () => {};
 
   return (
     <>

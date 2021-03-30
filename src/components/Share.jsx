@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   EmailShareButton,
@@ -19,7 +19,6 @@ const useStyles = makeStyles({
 });
 
 //github, linkedin, facebook
-
 export default function Share(props) {
   const github = props.github;
   const linkedin = props.linkedin;
@@ -27,8 +26,6 @@ export default function Share(props) {
   const {text} = props;
   const iconSize = 26;
   const shareUrl = window.location.href;
-
-  const [count, setCount] = useState(0);
 
   return (
     <Box display={"flex"} justifyContent={"space-between"}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
 export default function WithCenter(props) {
   return (

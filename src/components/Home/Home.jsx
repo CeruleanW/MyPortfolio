@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import { Typography, Box, Container, Grid } from "@material-ui/core";
 import mainPhoto from "../../assets/img/avatar2.png";
 import Image from "material-ui-image";
