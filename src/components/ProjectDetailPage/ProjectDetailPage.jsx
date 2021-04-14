@@ -41,6 +41,7 @@ function Heading(props) {
 
 export default function ProjectDetailPage(props) {
   const { id } = useParams(); //pure item id
+  
   //use the project id to find project data
   const projectData = getProject(id);
 

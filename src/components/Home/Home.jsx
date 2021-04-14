@@ -1,21 +1,19 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { Typography, Box, Container, Grid } from "@material-ui/core";
-import mainPhoto from "../../assets/img/avatar2.png";
-import Image from "material-ui-image";
-// import Description from "./Description";
-import { makeStyles } from "@material-ui/core/styles";
-import More from "./More";
-import ProjectsCarousel from "./ProjectsCarousel";
-import DotBox from "./DotBox";
-import { motion } from "framer-motion";
-import { CONSTANTS } from '../../data/globals';
-const { FULLNAME } = CONSTANTS;
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Typography, Box, Container, Grid } from '@material-ui/core';
+import mainPhoto from '../../assets/img/avatar2.png';
+import Image from 'material-ui-image';
+import { makeStyles } from '@material-ui/core/styles';
+import More from './More';
+import ProjectsCarousel from './ProjectsCarousel';
+import DotBox from './DotBox';
+import { motion } from 'framer-motion';
+import { FULLNAME, JOBTITLE } from '../../data/globals';
 
 const useStyles = makeStyles((theme) => ({
   maincontent: {
     paddingTop: theme.spacing(4),
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       paddingLeft: theme.spacing(13),
       paddingRight: theme.spacing(17),
     },
@@ -25,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(20),
   },
   noWidthOverflow: {
-    maxWidth: "100%",
+    maxWidth: '100%',
   },
   frame: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       paddingLeft: theme.spacing(10),
     },
   },
@@ -36,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(to top, ${theme.palette.secondary.light} 50%, transparent 50%)`,
   },
 }));
-
 
 //TODO: Add social media links
 export default function Home() {
@@ -50,32 +47,30 @@ export default function Home() {
 
   return (
     <Box width={1} className={classes.frame}>
-      <Container maxWidth="xl" className={classes.maincontent}>
+      <Container maxWidth='xl' className={classes.maincontent}>
         <Grid container>
           <Grid item xs={12} md={6}>
-            <Typography variant="h1">
-              Hi! <span>I'm</span> {FULLNAME},
+            <Typography variant='h1'>
+              Hi! <span>I'm</span> {FULLNAME}
             </Typography>
-            <Box width={"fit-content"}>
-              <Typography variant="h1">
-                <span className={classes.halfBackground}>
-                Web Developer
-                </span>
+            <Box width={'fit-content'}>
+              <Typography variant='h1'>
+                <span className={classes.halfBackground}>{JOBTITLE}</span>
               </Typography>
               <motion.div
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              transition={{ duration: 1, delay: 1 }}
-            >
-              <Typography variant="subtitle1" align={"left"}>
-                coding at Toronto, Canada.
-              </Typography>
-            </motion.div>
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                <Typography variant='subtitle1' align={'left'}>
+                  coding at Toronto, Canada.
+                </Typography>
+              </motion.div>
             </Box>
 
             <motion.div
-              initial="left"
-              animate="animate"
+              initial='left'
+              animate='animate'
               variants={variants}
               transition={{ duration: 1 }}
             >
@@ -91,15 +86,15 @@ export default function Home() {
           <Grid item xs={12} md={6}>
             <Box mx={10} mt={3} maxWidth={500} maxHeight={800}>
               <motion.div
-                initial="right"
-                animate="animate"
+                initial='right'
+                animate='animate'
                 variants={variants}
                 transition={{ duration: 1 }}
               >
                 <Image
                   src={mainPhoto}
-                  alt="Yi Yang's profile"
-                  imageStyle={{ width: "100%", zIndex: "10" }}
+                  alt={`${FULLNAME}'s profile`}
+                  imageStyle={{ width: '100%', zIndex: '10' }}
                   aspectRatio={0.75}
                   disableTransition
                 />

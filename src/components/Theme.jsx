@@ -1,7 +1,6 @@
 //Styles
 import {
   ThemeProvider,
-  makeStyles,
   createMuiTheme,
 } from "@material-ui/core/styles";
 const themeInstance = createMuiTheme({
@@ -69,12 +68,6 @@ themeInstance.typography.body1 = {
 themeInstance.typography.subtitle1 = {
   fontFamily: "Montserrat, sans-serif",
 };
-
-const useStyles = makeStyles((theme) => ({
-  // flexContent: {
-  //   flex: "1 0 auto",
-  // }
-}));
 
 export default function Theme(props) {
   return <ThemeProvider theme={themeInstance}>{props.children}</ThemeProvider>;

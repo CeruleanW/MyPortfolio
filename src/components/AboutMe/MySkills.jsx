@@ -1,17 +1,17 @@
-import React from "react";
-import Heading from "./Heading";
+import React from 'react';
+import Heading from './Heading';
 import {
   Typography,
   List,
   ListSubheader,
   ListItem,
   Grid,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   header: {
-    fontSize: "1rem",
-    fontFamily: "Muli,sans-serif",
+    fontSize: '1rem',
+    fontFamily: 'Muli,sans-serif',
     color: theme.palette.secondary.dark,
   },
 }));
@@ -38,43 +38,42 @@ const SkillSet = (props) => {
 const SimpleSkill = (props) => {
   return (
     <ListItem>
-      <Typography><span style={{ color: "cadetblue", marginRight: "6px" }}>●</span>
-      {props.children}</Typography>
+      <Typography>
+        <span style={{ color: 'cadetblue', marginRight: '6px' }}>●</span>
+        {props.children}
+      </Typography>
     </ListItem>
   );
 };
+
 const ExpandableSkill = (props) => {
-  return (
-    <SimpleSkill>
-      {props.children}
-    </SimpleSkill>
-  );
+  return <SimpleSkill>{props.children}</SimpleSkill>;
 };
 
 export default function MySkills() {
   return (
     <>
       <Heading>My Skills</Heading>
-      <Grid container justify={"space-between"}>
-        <SkillSet title={"Coding Language"}>
+      <Grid container justify={'space-between'}>
+        <SkillSet title={'Coding Language'}>
           <ExpandableSkill>Java</ExpandableSkill>
           <ExpandableSkill>JavaScript</ExpandableSkill>
           <SimpleSkill>HTML, CSS</SimpleSkill>
           <SimpleSkill>Python</SimpleSkill>
         </SkillSet>
-        <SkillSet title={"Frameworks & Libs"}>
+        <SkillSet title={'Frameworks & Libs'}>
           <ExpandableSkill>React.js (React Router)</ExpandableSkill>
           <ExpandableSkill>React Native</ExpandableSkill>
           <ExpandableSkill>Material UI</ExpandableSkill>
           <SimpleSkill>Jest, JUnit</SimpleSkill>
         </SkillSet>
-        <SkillSet title={"Methods & Tools"}>
+        <SkillSet title={'Methods & Tools'}>
           <ExpandableSkill>Webpack, NPM</ExpandableSkill>
           <ExpandableSkill>MongoDB</ExpandableSkill>
           <SimpleSkill>MatLab, R</SimpleSkill>
           <SimpleSkill>Test-Driven Development</SimpleSkill>
         </SkillSet>
-        <SkillSet title={"Additional"}>
+        <SkillSet title={'Additional'}>
           <SimpleSkill>UML</SimpleSkill>
           <SimpleSkill>SAP</SimpleSkill>
           <SimpleSkill>Bizagi BPMN Modeler</SimpleSkill>
