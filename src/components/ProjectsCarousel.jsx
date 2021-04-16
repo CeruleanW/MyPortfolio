@@ -10,10 +10,10 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { makeStyles } from "@material-ui/core/styles";
-import CustomCard from "./CustomCard/CustomCard";
+import CustomCard from "../components/CustomCard";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import { carouselProjects } from "../../data/projects.json";
+import { carouselProjects } from "../data/projects.json";
 import "./ProjectsCarousel.css";
 
 const useStyles = makeStyles((theme) => ({

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import ProjectSection from "./ProjectSection";
-import data from '../../data/projects.json';
+import ProjectSection from "../components/ProjectSection";
+import data from '../data/projects.json';
 
 // Structure:
 // - title

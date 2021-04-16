@@ -12,7 +12,7 @@ import {
 } from "@material-ui/core";
 import { PropTypes } from "prop-types";
 import defaultImage from "./SD-default-image.png";
-import WithCenter from "../../WithCenter";
+import WithCenter from "./WithCenter";
 import { Link } from "react-router-dom";
 
 //Styles

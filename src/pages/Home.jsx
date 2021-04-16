@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Typography, Box, Container, Grid } from '@material-ui/core';
-import mainPhoto from '../../assets/img/avatar2.png';
+import mainPhoto from '../assets/img/avatar2.png';
 import Image from 'material-ui-image';
 import { makeStyles } from '@material-ui/core/styles';
-import More from './More';
-import ProjectsCarousel from './ProjectsCarousel';
-import DotBox from './DotBox';
+import More from '../components/More';
+import ProjectsCarousel from '../components/ProjectsCarousel';
+import DotBox from '../components/DotBox';
 import { motion } from 'framer-motion';
-import { FULLNAME, JOBTITLE } from '../../data/globals';
+import { FULLNAME, JOBTITLE } from '../data/globals';
 
 const useStyles = makeStyles((theme) => ({
   maincontent: {

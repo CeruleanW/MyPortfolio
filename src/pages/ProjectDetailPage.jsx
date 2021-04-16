@@ -1,10 +1,10 @@
 import React from 'react';
 import { Typography, Box, Grid, Container } from '@material-ui/core';
-import Description from '../Home/Description';
+import Description from '../components/Description';
 import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import data from '../../data/projects.json';
-import { MetaDataList } from './MetaDataList';
+import data from '../data/projects.json';
+import { MetaDataList } from '../components/MetaDataList';
 
 //TODO:
 // pics for projects

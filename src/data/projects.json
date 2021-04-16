@@ -21,7 +21,7 @@
       "title": "Google Photos Search Enhancer",
       "subtitle": "helps users to search words in the descriptions and filenames in Google Photos Library in any language, to solve the problem that Google Photos only supports search for a set of common words. All the Photo data are stored locally in IndexedDB",
       "image": "gpse.png",
-      "techs": ["React.js", "RESTful API", "Material UI", "Webpack", "IndexedDB"],
+      "techs": ["React.js", "RESTful API", "Material UI", "Webpack", "IndexedDB", "Fuse.js"],
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50963f0",
       "type": "Personal Project",
       "live": "https://ceruleanw.github.io/google-photos-search-enhancer/",

@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import {
   Typography,
-  Paper,
   Box,
   Button,
   Grid,
@@ -11,9 +10,9 @@ import {
   Modal,
   CircularProgress
 } from '@material-ui/core';
-
+import {EMAILAPIURL} from '../data/globals';
 import { makeStyles } from '@material-ui/core/styles';
-import SocialMedia from './SocialMedia';
+import SocialMedia from '../components/SocialMedia';
 import { useTheme } from '@material-ui/styles';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
@@ -95,12 +94,7 @@ function createHeader() {
       'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjI1YjlhZDNiZGViYWY0YzBkY2IyMmFjNzIwZWI4N2EzNDI5MDMzMWJhMGM2MTViMjdmOGM2ZWNhOWNhYTI3NDg4M2U0YzI1YTg2YmY2MGQiLCJpYXQiOjE2MTQyMDYzMjksIm5iZiI6MTYxNDIwNjMyOSwiZXhwIjo0NzY5ODc5OTI5LCJzdWIiOiIyNjUwIiwic2NvcGVzIjpbImVtYWlsX2Z1bGwiXX0.OqE-lpZc8I0SrijQ4KNt0bc6dpO_aepd4dEM9x805BvRvZGrKcj2cNpJVL5Vn-qGffIuhnQCihjOHa1fsuG80INWZi2OYXMZNfCBG4ffu4CJge_97zpXQiN4DOp_fHP-8GuP4-Gn_h8cJr8SDfM8IPY0X6dTI2u9UH_QqzIMRYsJ1Q1hqY1ETzUvVNb9JBYP6WO3FfMGtTBS4eRhATYYeKBYrXWACR6IjaqojphuKnTzyn0t6ObHq1fwDLf4nQh22ENnsxgA-Jr9xe3DAR4_BKc4BYwYobTB2htskLOvFDkDsK6KSnPtLvL2GutlYVGVt2A0KCEx3sUSy0It1CvXsK481zxat51k_U0IP4AlOvoarMI_qfWT1HfLEH-wGz01lvbRaDAA93t-eu-ebtETQP1Kk4933M6p6Azj1SImjszh8xxW2mhQD1QC6yoVFCrfd1I576MriHsneJIcRKVTyiW42J8M6SrDGdbalWezDVj17_VYMzPAqk9NNrA-VmwYFBumypHluY7NSGjBP-69aVltrwCMv8K1jLnnmoNcbECuEuneai1KyvndgTFetT5prQSoJ15ftFkR0dNJBSMbcWGvqfuwPCLiNNIpLKO-7_j-yvf-6KTQpdYwMA8TyDgKkwyIVPs0VBps8VbH9AYvnWwqP9h0mqR75RlW9GTD5j4',
   });
   Object.assign(myHeaders, { 'Content-Type': 'application/json' });
-  // Object.assign(myHeaders, {'Access-Control-Allow-Origin': 'https://yiyangdev.me'});
   Object.assign(myHeaders, { 'Access-Control-Allow-Origin': '*' });
-  // myHeaders.append(
-  //   'Cookie',
-  //   '__cfduid=d18414ef81bb46bb8b038f62e585ee9d81614206647'
-  // );
   return myHeaders;
 }
 
@@ -119,11 +113,11 @@ export default function Contact(props) {
     const requestOptions = createRequestOption(data);
     console.log(requestOptions);
     await fetch(
-      'https://email-service-cerulean.herokuapp.com/portfolio',
+      EMAILAPIURL,
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => {
+      .then(() => {
         alert('Success!');
         setIsReady(true);
       })

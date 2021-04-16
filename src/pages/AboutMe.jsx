@@ -2,7 +2,7 @@
 
 // include a contact form and your social media channels.
 import React from 'react';
-import profilePhoto from '../../assets/img/JJH00191.JPG';
+import profilePhoto from '../assets/img/JJH00191.JPG';
 import {
   Typography,
   Box,
@@ -10,14 +10,14 @@ import {
   Container,
   useMediaQuery,
 } from '@material-ui/core';
-import Description from './../Home/Description';
+import Description from '../components/Description';
 import Image from 'material-ui-image';
 import { makeStyles } from '@material-ui/core/styles';
-import MyStory from './MyStory';
-import MySkills from './MySkills';
+import MyStory from '../components/MyStory';
+import MySkills from '../components/MySkills';
 import { useTheme } from '@material-ui/styles';
 import { motion } from 'framer-motion';
-import { CONSTANTS } from '../../data/globals';
+import { CONSTANTS } from '../data/globals';
 const { FULLNAME } = CONSTANTS;
 
 const useStyles = makeStyles((theme) => ({
