@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   Typography,
   Card,
   CardActions,
@@ -8,11 +7,9 @@ import {
   CardContent,
   CardMedia,
   Box,
-  Grid,
 } from "@material-ui/core";
 import { PropTypes } from "prop-types";
-import defaultImage from "./SD-default-image.png";
-import WithCenter from "./WithCenter";
+import defaultImage from "../assets/img/SD-default-image.png";
 import { Link } from "react-router-dom";
 
 //Styles
@@ -48,36 +45,9 @@ CustomCard.propTypes = {
   bg: PropTypes.string,
 };
 
-const ButtonAtBottom = (props) => {
-  const classes = useStyles();
-
-  return (
-    <WithCenter>
-      <Grid item xs={12}>
-        <Button
-          variant={"outlined"}
-          size="small"
-          color="primary"
-          className={classes.button} // component={Link}
-          // to={`/`}
-          onClick={props.onClick}
-        >
-          See it!
-        </Button>
-      </Grid>
-    </WithCenter>
-  );
-};
-
 export default function CustomCard(props) {
   const classes = useStyles();
   const { title, subtitle, image, id } = props;
-
-  function handleClick() {
-    //set isLoading=true
-    // updateIsLoading(true);
-    return null;
-  }
 
   return (
     <>

@@ -2,15 +2,13 @@ import React from "react";
 import {
   EmailIcon,
   FacebookIcon,
-  WhatsappIcon,
   LinkedinIcon,
 } from "react-share";
-//https://www.npmjs.com/package/react-share
 import { Box, Link } from "@material-ui/core";
 
 export default function SocialMedia(props) {
   const iconSize = 26;
-  const shareUrl = window.location.href;
+  // const shareUrl = window.location.href;
 
   return (
     <Box display={"flex"} justifyContent={"space-between"}>

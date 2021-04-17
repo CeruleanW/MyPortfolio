@@ -19,7 +19,7 @@
     },
     {
       "title": "Google Photos Search Enhancer",
-      "subtitle": "helps users to search words in the descriptions and filenames in Google Photos Library in any language, to solve the problem that Google Photos only supports search for a set of common words. All the Photo data are stored locally in IndexedDB",
+      "subtitle": "Search phrases more than general keywords in the descriptions and filenames in your Google Photos. Support fuzzy search",
       "image": "gpse.png",
       "techs": ["React.js", "RESTful API", "Material UI", "Webpack", "IndexedDB", "Fuse.js"],
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50963f0",
@@ -81,7 +81,7 @@
     },
     {
       "title": "Google Photos Search Enhancer",
-      "subtitle": "helps users to match words in the descriptions and filenames in Google Photos Library in any language, using React.js and Material UI, RESTful API of Google. Photo data are stored in IndexedDB",
+      "subtitle": "Search phrases more than general keywords in the descriptions and filenames in your Google Photos. Support fuzzy search",
       "image": "gpse.png",
       "id": "0c6d7ee9-fbca-477f-8f0d-2f1eb50963f0"
     },

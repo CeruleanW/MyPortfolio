@@ -10,7 +10,7 @@ import {
   Modal,
   CircularProgress
 } from '@material-ui/core';
-import {EMAILAPIURL} from '../data/globals';
+import { EMAILAPIURL } from '../data/globals';
 import { makeStyles } from '@material-ui/core/styles';
 import SocialMedia from '../components/SocialMedia';
 import { useTheme } from '@material-ui/styles';

@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { CONSTANTS } from "../../data/globals";
-const { FULLNAME } = CONSTANTS;
+import { FULLNAME } from "../../data/globals";
 
 const useStyles = makeStyles({
   footerLink: {

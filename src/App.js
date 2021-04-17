@@ -1,4 +1,4 @@
-import React, { useEffect, lazy } from 'react';
+import React, { lazy } from 'react';
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav';
 import NavTabs from './components/NavTabs';
@@ -12,7 +12,8 @@ import Theme from './components/Theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import ScrollToTop from './components/ScrollToTop';
-import { CONSTANTS } from './data/globals';
+import { STATEMENT, PAGEROUTES, PAGETITLES } from './data/globals';
+import './styles/indexpage.scss';
 
 // const Projects = lazy(() => import('../components/Project/Projects'));
 // const AboutMe = lazy(() => import('../components/AboutMe/AboutMe'));
@@ -23,33 +24,22 @@ import { CONSTANTS } from './data/globals';
 // - Would be nice
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
-const { STATEMENT } = CONSTANTS;
-
-//Routing tabs
-const allTabs = ['/', '/projects', '/aboutme', '/contact'];
-const pageTitles = ['Home', 'Projects', 'About me', 'Contact'];
-
 export default function App() {
-
-  useEffect(() => {
-    console.log(STATEMENT);
-  }, []);
-
-
+  console.log(STATEMENT);
   return (
     <Theme>
       <CssBaseline />
       <BrowserRouter>
-        <div className='App' style={{ minHeight: `calc(100vh - 56px)` }}>
-          <Nav routes={allTabs} pageTitles={pageTitles}>
+        <div className={'root-container'}>
+          <Nav routes={PAGEROUTES} pageTitles={PAGETITLES}>
             <Route
               path='/'
               render={({ location }) => (
                 <>
                   <NavTabs
-                    routes={allTabs}
+                    routes={PAGEROUTES}
                     value={location.pathname}
-                    pageTitles={pageTitles}
+                    pageTitles={PAGETITLES}
                   />
                 </>
               )}
@@ -59,21 +49,21 @@ export default function App() {
             render={({ location }) => (
               <AnimatePresence exitBeforeEnter initial={false}>
                 <Switch key={location.pathname}>
-                  <Route exact path={allTabs[0]} render={() => <Home />} />
+                  <Route exact path={PAGEROUTES[0]} render={() => <Home />} />
                   <Route
-                    path={`${allTabs[1]}/:id`}
+                    path={`${PAGEROUTES[1]}/:id`}
                     render={() => <ProjectDetailPage />}
                   />
-                  <Route path={allTabs[1]} render={() => <Projects />} />
-                  <Route path={allTabs[2]} render={() => <AboutMe />} />
-                  <Route path={allTabs[3]} render={() => <Contact />} />
+                  <Route path={PAGEROUTES[1]} render={() => <Projects />} />
+                  <Route path={PAGEROUTES[2]} render={() => <AboutMe />} />
+                  <Route path={PAGEROUTES[3]} render={() => <Contact />} />
                 </Switch>
               </AnimatePresence>
             )}
           />
+          <Footer />
+          <ScrollToTop />
         </div>
-        <Footer />
-        <ScrollToTop />
       </BrowserRouter>
     </Theme>
   );
