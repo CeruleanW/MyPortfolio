@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import { Typography, Paper, Box, Button, Grid, Chip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./ProjectSection.css";
@@ -71,7 +71,7 @@ const ProjectCard = (props) => {
 
 const ProjectText = (props) => {
   const classes = useStyles();
-  const { isRightNarrow, title, subtitle, id } = props;
+  const { isRightNarrow, title, subtitle, id, index } = props;
   const { url } = useRouteMatch();
 
   return (
@@ -84,7 +84,7 @@ const ProjectText = (props) => {
           className={classes.title}
           align={isRightNarrow ? "left" : "right"}
         >
-          {title}
+          {`${index + 1}. ${title}`}
         </Typography>
         <Typography align={isRightNarrow ? "left" : "right"}>
           {subtitle}
@@ -124,8 +124,6 @@ export default function ProjectSection(props) {
   const classes = useStyles();
   const { image, isRightNarrow} = props;
 
-  const [isHover, setIsHover] = useState(false);
-  // const [isLoaded, setIsLoaded] = useState(false);
   const imagePath = process.env.PUBLIC_URL + "/img/" + image; // local image path
 
   return (

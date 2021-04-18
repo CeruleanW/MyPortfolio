@@ -46,6 +46,7 @@ export default function ProjectsCarousel(props) {
           totalSlides={projectList.length}
           className={classes.provider}
           infinite={true}
+          isPlaying
         >
           <Grid container alignItems={"center"} spacing={1} justify={"center"}>
             <Grid container item xs={1} justify={"center"}>

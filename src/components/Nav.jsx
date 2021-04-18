@@ -6,17 +6,18 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import SimpleMenu from './SimpleMenu';
 
-const navTitleFont = "'Exo', sans-serif";
+const navTitleFont = "Exo, 'sans-serif'";
 
 export default function Nav(props) {
   const useStyles = makeStyles((theme) => ({
-    navTitlePadding: {
+    navTitleLayout: {
       paddingLeft: theme.spacing(4),
       paddingRight: theme.spacing(6),
     },
-    navTitleFont: {
+    navTitle: {
       fontFamily: navTitleFont,
       fontSize: theme.spacing(3),
+      color: theme.palette.primary.contrastText,
     },
     noDecorationForLink: {
         textDecoration: "none",
@@ -36,7 +37,7 @@ export default function Nav(props) {
         <Toolbar disableGutters>
           <Box component={Link} to={allTabs[0]} className={classes.noDecorationForLink}>
             <Typography
-              className={`${classes.navTitlePadding} ${classes.navTitleFont}`}
+              className={`${classes.navTitleLayout} ${classes.navTitle}`}
               noWrap
             >
               &#10023; Asher.Y

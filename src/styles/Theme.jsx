@@ -1,26 +1,24 @@
 //Styles
-import {
-  ThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 const themeInstance = createMuiTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: "#2C2C2C",
+      main: '#2C2C2C',
       // dark: will be calculated from palette.primary.main,
-      contrastText: "#FEFEFE",
+      contrastText: '#FEFEFE',
     },
     secondary: {
-      light: "#DCEAEB",
-      main: "#88BBBC",
-      dark: "#055158",
-      contrastText: "#fff",
+      light: '#DCEAEB',
+      main: '#88BBBC',
+      dark: '#055158',
+      contrastText: '#fff',
     },
     text: {
-      primary: "#373737",
-      secondary: "#505050",
-      contrastBackground: "#65FFC9",
+      primary: '#373737',
+      secondary: '#505050',
+      contrastBackground: '#65FFC9',
     },
 
     // // Used by `getContrastText()` to maximize the contrast between
@@ -33,40 +31,47 @@ const themeInstance = createMuiTheme({
   },
 });
 
+const font = {
+  first: "'Raleway', sans-serif;",
+  second: 'Muli, sans-serif',
+  body: 'Montserrat, sans-serif',
+};
+
+
 themeInstance.typography.h1 = {
-  fontSize: "1.9rem",
-  [themeInstance.breakpoints.up("md")]: {
-    fontSize: "2.8rem",
+  fontSize: '1.9rem',
+  [themeInstance.breakpoints.up('md')]: {
+    fontSize: '2.8rem',
   },
   lineHeight: 1.567,
-  fontFamily: "'Raleway', sans-serif;",
+  fontFamily: font.first,
   fontWeight: 700,
 };
 
 themeInstance.typography.h2 = {
-  fontSize: "1.5rem",
-  fontFamily: "'Raleway', sans-serif;",
-  [themeInstance.breakpoints.up("md")]: {
-    fontSize: "2rem",
+  fontSize: '1.5rem',
+  fontFamily: font.first,
+  [themeInstance.breakpoints.up('md')]: {
+    fontSize: '2rem',
   },
   lineHeight: 1.567,
 };
 
 themeInstance.typography.h5 = {
-  fontSize: "1.5rem",
-  fontFamily: "Muli, sans-serif",
+  fontSize: '1.5rem',
+  fontFamily: font.second,
 };
 
 themeInstance.typography.body1 = {
-  fontFamily: "Montserrat, sans-serif",
-  lineHeight: "28px",
-  fontSize: "16px",
+  fontFamily: font.body,
+  lineHeight: '28px',
+  fontSize: '16px',
   fontWeight: 400,
-  opacity: "0.9",
+  opacity: '0.9',
 };
 
 themeInstance.typography.subtitle1 = {
-  fontFamily: "Montserrat, sans-serif",
+  fontFamily: font.body,
 };
 
 export default function Theme(props) {

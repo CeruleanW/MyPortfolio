@@ -20,6 +20,7 @@ export default function Projects(props) {
           <ProjectSection
             key={"project-" + index}
             isRightNarrow={isRightNarrow}
+            index={index}
             {...project}
           ></ProjectSection>
         );

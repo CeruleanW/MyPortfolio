@@ -7,17 +7,17 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import AboutMe from './pages/AboutMe';
 import Contact from './pages/Contact';
-import { AnimatePresence } from 'framer-motion';
-import Theme from './components/Theme';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import { AnimatePresence } from 'framer-motion';
+import Theme from './styles/Theme';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import ScrollToTop from './components/ScrollToTop';
 import { STATEMENT, PAGEROUTES, PAGETITLES } from './data/globals';
-import './styles/indexpage.scss';
+import './styles/App.scss';
 
 // const Projects = lazy(() => import('../components/Project/Projects'));
 // const AboutMe = lazy(() => import('../components/AboutMe/AboutMe'));
-// const Contact = lazy(() => import('../components/Contact/Contact'));
+// const Contact = lazy(() => import('./pages/Contact'));
 
 // Sections
 // - Career Goals: Your professional goals for the next five years.
@@ -45,22 +45,24 @@ export default function App() {
               )}
             />
           </Nav>
-          <Route
-            render={({ location }) => (
-              <AnimatePresence exitBeforeEnter initial={false}>
-                <Switch key={location.pathname}>
-                  <Route exact path={PAGEROUTES[0]} render={() => <Home />} />
-                  <Route
-                    path={`${PAGEROUTES[1]}/:id`}
-                    render={() => <ProjectDetailPage />}
-                  />
-                  <Route path={PAGEROUTES[1]} render={() => <Projects />} />
-                  <Route path={PAGEROUTES[2]} render={() => <AboutMe />} />
-                  <Route path={PAGEROUTES[3]} render={() => <Contact />} />
-                </Switch>
-              </AnimatePresence>
-            )}
-          />
+          <main className={'root-main'} >
+            <Route
+              render={({ location }) => (
+                <AnimatePresence exitBeforeEnter initial={false}>
+                  <Switch key={location.pathname}>
+                    <Route exact path={PAGEROUTES[0]} render={() => <Home />} />
+                    <Route
+                      path={`${PAGEROUTES[1]}/:id`}
+                      render={() => <ProjectDetailPage />}
+                    />
+                    <Route path={PAGEROUTES[1]} render={() => <Projects />} />
+                    <Route path={PAGEROUTES[2]} render={() => <AboutMe />} />
+                    <Route path={PAGEROUTES[3]} render={() => <Contact />} />
+                  </Switch>
+                </AnimatePresence>
+              )}
+            />
+          </main>
           <Footer />
           <ScrollToTop />
         </div>

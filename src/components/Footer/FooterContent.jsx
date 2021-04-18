@@ -1,28 +1,18 @@
 import React from "react";
-import { Box, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { FULLNAME } from "../../data/globals";
+import styles from './Footer.module.scss';
 
-const useStyles = makeStyles({
-  footerLink: {
-    "&:visited": {
-      color: "blueviolet",
-    },
-  },
-});
-
-export default function FooterContent() {
-  const classes = useStyles();
+export default function FooterContent(props) {
+  const {owner, url, year} = props
   return (
-      <Box className={classes.footer} justifyContent={"center"}>
-        <Typography align='center' >
-          Copyright &copy; 2020 Developed with ❤️ by {' '}
-          <a className={classes.footerLink}
-            href='https://github.com/CeruleanW'
+      <div>
+        <p className={styles.text} >
+          Copyright &copy; {year} Developed with ❤️ by {' '}
+          <a className={styles.footerLink}
+            href={url}
           >
-           {FULLNAME}
+           {owner}
           </a>
-        </Typography>
-      </Box>
+        </p>
+      </div>
   );
 }
