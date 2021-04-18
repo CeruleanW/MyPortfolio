@@ -16,6 +16,7 @@ import SocialMedia from '../components/SocialMedia';
 import { useTheme } from '@material-ui/styles';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
+import styles from '../styles/Contact.module.scss';
 
 const useStyles = makeStyles((theme) => {
   const py = theme.spacing(10);
@@ -174,7 +175,7 @@ export default function Contact(props) {
               </Grid>
             </Grid>
             <Button
-              className={classes.submit}
+              className={`${classes.submit} ${styles.tooltip}`}
               variant='contained'
               color='primary'
               size='large'
@@ -185,6 +186,7 @@ export default function Contact(props) {
               onClick={handleSubmit(onSubmit)}
             >
               Submit
+              <span className={styles.tooltiptext}>It will request a Express.js middleware to send a email</span>
             </Button>
           </form>
         </motion.div>
