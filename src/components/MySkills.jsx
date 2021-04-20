@@ -58,12 +58,13 @@ export default function MySkills() {
         <SkillSet title={'Coding Language'}>
           <ExpandableSkill>Java</ExpandableSkill>
           <ExpandableSkill>JavaScript</ExpandableSkill>
-          <SimpleSkill>HTML, CSS</SimpleSkill>
+          <SimpleSkill>HTML5, CSS3</SimpleSkill>
           <SimpleSkill>Python</SimpleSkill>
         </SkillSet>
         <SkillSet title={'Frameworks & Libs'}>
           <ExpandableSkill>React.js (React Router)</ExpandableSkill>
           <ExpandableSkill>React Native</ExpandableSkill>
+          <SimpleSkill>Next.js</SimpleSkill>
           <ExpandableSkill>Material UI</ExpandableSkill>
           <SimpleSkill>Jest, JUnit</SimpleSkill>
         </SkillSet>

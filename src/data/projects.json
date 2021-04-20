@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "title": "Plant Light Meter (placeholder)",
+      "title": "Plant Light Meter (tentative)",
       "subtitle": "A mobile app measures the light intensity to help you find the appropriate location for your indoor plants",
       "image": "plm.png",
       "techs": ["React Native", "Java (Android)", "MongoDB Realm", "Agile/Scrum", "Highcharts"],
@@ -33,7 +33,7 @@
         "problem": ["Handling the Promises in JavaScript really troubled me a lot. I was not quite familiar with the callback functions either, for I didn't encounter them in Java. I spend a large amount of time on reading materials to learn AJAX and Promises. The app should only start searching when the API calls are fuifilled. This requires a good state management", "Besides this, Google Photos API requires OAuth 2.0 authorization. It doesn't provide a API to let you search through the library, and only returns one page of item per request. To solve the problem, I use IndexedDB to store all the data from responses on the client and search through it afterwards"],
         "lesson": ["Although React.js provides Context to help the state management and I used it. It would be better if I used a state management tool as Redux"]
       },
-      "illustrations": ["gpse01.png","gpse02.png", "gpse03.gif"]
+      "illustrations": ["gpse01.gif","gpse02.png", "gpse03.png"]
     },
     {
       "title": "Church Education Website",

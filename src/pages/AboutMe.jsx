@@ -17,6 +17,7 @@ import MyStory from '../components/MyStory';
 import MySkills from '../components/MySkills';
 import { useTheme } from '@material-ui/styles';
 import { motion } from 'framer-motion';
+import DowloadButton from '../components/DowloadButton';
 import { CONSTANTS } from '../data/globals';
 const { FULLNAME } = CONSTANTS;
 
@@ -102,6 +103,11 @@ export default function AboutMe() {
         </Grid>
         <Section>
           <MySkills />
+        </Section>
+        <Section>
+          <DowloadButton href='https://drive.google.com/file/d/1kVG2EiIYVW2Bm7j7DMw_6BxSm8fpwrRL/view?usp=sharing'>
+            Resume
+          </DowloadButton>
         </Section>
       </Container>
     </>
