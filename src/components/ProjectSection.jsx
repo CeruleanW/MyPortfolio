@@ -38,7 +38,7 @@ const ProjectText = (props) => {
           {`${index + 1}. ${title}`}
         </h2>
         <p className={`mt-3 text-base lg:text-left`}>{subtitle}</p>
-        <div className={`flex flex-wrap mt-20 justify-center lg:justify-start`}>
+        <div className={`flex flex-wrap mt-20 lg:mt-14 justify-center lg:justify-start`}>
           {props.techs.map((tech, index) => (
             <span key={'tech-' + tech} className={`${styles.chip} ${index === 0 ? 'pl-0 pr-2' : 'px-2'}`} >
               {tech}

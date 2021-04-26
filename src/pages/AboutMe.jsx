@@ -6,7 +6,7 @@ import MyStory from '../components/MyStory';
 import MySkills from '../components/MySkills';
 import DowloadButton from '../components/DowloadButton';
 import { FULLNAME } from '../data/globals';
-import styles from '../styles/components.module.scss';
+import styles from '../styles/AboutMe.module.scss';
 
 const H1 = (props) => {
   return <Typography variant={'h1'}>{props.children}</Typography>;

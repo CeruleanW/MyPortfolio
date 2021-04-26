@@ -47,7 +47,7 @@ export function Header() {
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <Typography variant='subtitle1' align={'left'}>
+          <Typography variant='subtitle1'>
             coding at Toronto, Canada.
           </Typography>
         </motion.div>

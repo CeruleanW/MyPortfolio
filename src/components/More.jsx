@@ -20,7 +20,7 @@ export default function SeeMyProject(props) {
   const classes = useStyles();
 
   return (
-    <Box>
+    <div className='flex flex-nowrap'>
       <ExpandMoreIcon
         className={classes.simple}
         style={{ marginLeft: '-6px' }}
@@ -29,6 +29,6 @@ export default function SeeMyProject(props) {
         See My Projects{' '}
       </Typography>
       <SVGLine height={props.height} />
-    </Box>
+    </div>
   );
 }
