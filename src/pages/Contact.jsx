@@ -99,7 +99,7 @@ function createHeader() {
   return myHeaders;
 }
 
-export default function Contact(props) {
+export default function Contact() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'), {
@@ -107,7 +107,7 @@ export default function Contact(props) {
   });
   const [isReady, setIsReady] = useState(true);
 
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     setIsReady(false);
     //submit data to API for notification

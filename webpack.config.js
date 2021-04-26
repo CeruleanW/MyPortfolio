@@ -18,6 +18,7 @@ module.exports = {
               sourceMapContents: false,
             },
           },
+          'postcss-loader'
         ],
       },
     ],

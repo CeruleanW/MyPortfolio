@@ -1,175 +1,82 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { Typography, Paper, Box, Button, Grid, Chip } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import "./ProjectSection.css";
-import { motion } from "framer-motion";
-import { Link, useRouteMatch } from "react-router-dom";
-
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Button } from '@material-ui/core';
+import { motion } from 'framer-motion';
+import { Link, useRouteMatch } from 'react-router-dom';
+import styles from '../styles/components.module.scss';
 
 // Single project section
-const useStyles = makeStyles((theme) => ({
-  gridContainer: {
-    // maxWidth: "90vw",
-  },
-  paperContainer: {
-    // maxWidth: "90vw",
-    height: theme.spacing(50),
-    width: theme.spacing(80),
-    margin: "auto",
-    [theme.breakpoints.down("md")]: {
-      height: theme.spacing(20),
-      width: theme.spacing(32),
-    },
-  },
-  title: {
-    fontFamily: "'Raleway', sans-serif",
-  },
-  tech: {
-    width: "auto",
-    borderRadius: "6pt",
-    color: theme.palette.text.primary,
-    backgroundColor: theme.palette.text.contrastBackground,
-  },
-  techContainer: {
-    display: "flex",
-    marginTop: theme.spacing(4),
-    flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(0.5),
-    },
-  },
-}));
 
 const scaleAni = { whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } };
 
 const ProjectCard = (props) => {
-  const { id, imagePath } = props;
+  const { id, title, image } = props;
   const { url } = useRouteMatch();
-  const classes = useStyles();
-
-  //set background image
-  const styles = {
-    bgImage: {
-      backgroundImage: `url(${imagePath})`,
-      backgroundRepeat: "no-repeat" /* Do not repeat the image */,
-      backgroundSize:
-        "cover" /* Resize the background image to cover the entire container */,
-    },
-  };
+  const imagePath = process.env.PUBLIC_URL + '/img/' + image; // local image path
 
   return (
-    <motion.div {...scaleAni}>
-      <Box>
-        <Link to={`${url}/${id}`}>
-          <Paper style={styles.bgImage} className={classes.paperContainer} />
-        </Link>
-      </Box>
+    <motion.div className={`w-11/12 lg:w-2/5 max-w-full mt-4`} {...scaleAni}>
+      <Link to={`${url}/${id}`}>
+        <img src={imagePath} alt={title} className={styles['img-fit']} />
+      </Link>
     </motion.div>
   );
 };
 
 const ProjectText = (props) => {
-  const classes = useStyles();
   const { isRightNarrow, title, subtitle, id, index } = props;
   const { url } = useRouteMatch();
 
   return (
-    <Box maxWidth={500}>
+    <div
+      className={`text-center max-w-full mt-8 lg:max-w-screen-sm  ${
+        isRightNarrow ? 'lg:ml-14' : 'order-first lg:mr-14'
+      }`}
+    >
       <motion.div {...scaleAni}>
-      <Box mt={4}>
-        <Typography
-          variant={"h5"}
-          component={"p"}
-          className={classes.title}
-          align={isRightNarrow ? "left" : "right"}
-        >
+        <h2 className={`text-center text-2xl lg:text-left`}>
           {`${index + 1}. ${title}`}
-        </Typography>
-        <Typography align={isRightNarrow ? "left" : "right"}>
-          {subtitle}
-        </Typography>
-      </Box>
-      <Box
-        className={classes.techContainer}
-        justifyContent={isRightNarrow ? "flex-start" : "flex-end"}
-      >
-        {props.techs.map((tech, index) => (
-          <Chip key={"tech-" + index} label={tech} className={classes.tech} />
-        ))}
-      </Box>
+        </h2>
+        <p className={`mt-3 text-base lg:text-left`}>{subtitle}</p>
+        <div className={`flex flex-wrap mt-20 justify-center lg:justify-start`}>
+          {props.techs.map((tech, index) => (
+            <span key={'tech-' + tech} className={`${styles.chip} ${index === 0 ? 'pl-0 pr-2' : 'px-2'}`} >
+              {tech}
+            </span>
+          ))}
+        </div>
       </motion.div>
-      <Box
-        display="flex"
-        justifyContent={isRightNarrow ? "flex-start" : "flex-end"}
-        alignItems={"center"}
-        mt={8}
+      <motion.div
+        className={`flex justify-center items-center mt-8 mb-6`}
+        {...scaleAni}
       >
-        <motion.div {...scaleAni}>
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            component={Link} to={`${url}/${id}`}
-          >
-            Check it out!
-          </Button>
-        </motion.div>
-      </Box>
-    </Box>
+        <Button
+          variant='contained'
+          color='primary'
+          size='large'
+          component={Link}
+          to={`${url}/${id}`}
+        >
+          Check it out!
+        </Button>
+      </motion.div>
+    </div>
   );
 };
 
 export default function ProjectSection(props) {
-  const classes = useStyles();
-  const { image, isRightNarrow} = props;
-
-  const imagePath = process.env.PUBLIC_URL + "/img/" + image; // local image path
+  // Structure:
+  // - title
+  // - function
+  // - explanations of projects to illustrate how you handle problems
 
   return (
     <>
-      <section>
-        <Grid
-          container
-          justify={"center"}
-          alignItems={"center"}
-          className={classes.gridContainer}
-        >
-          {isRightNarrow ? (
-            <Grid item lg={6} xs={11}>
-              <ProjectCard
-                onAppear={true}
-                imagePath={imagePath}
-                {...props}
-              />
-            </Grid>
-          ) : (
-            <Grid item lg={4} xs={11}>
-              <ProjectText
-                onAppear={true}
-                {...props}
-              />
-            </Grid>
-          )}
-
-          {isRightNarrow ? (
-            <Grid item lg={4} xs={11}>
-              <ProjectText
-                onAppear={true}
-                isRightNarrow={isRightNarrow}
-                {...props}
-              />
-            </Grid>
-          ) : (
-            <Grid item lg={6} xs={11}>
-              <ProjectCard
-                onAppear={true}
-                imagePath={imagePath}
-                {...props}
-              />
-            </Grid>
-          )}
-        </Grid>
+      <section className={`${props.className} `}>
+        <div className='flex flex-col lg:flex-row justify-center items-center mt-10 lg:mt-4 max-w-full flex-grow'>
+          <ProjectCard {...props} />
+          <ProjectText {...props} />
+        </div>
       </section>
     </>
   );

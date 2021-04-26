@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
-import mainPhoto from '../assets/img/avatar2.png';
 import Image from 'material-ui-image';
 import { makeStyles } from '@material-ui/core/styles';
 import SeeMyProject from '../components/More';
@@ -10,6 +9,8 @@ import DotBox from '../components/DotBox';
 import { motion } from 'framer-motion';
 import { FULLNAME, JOBTITLE } from '../data/globals';
 import styles from '../styles/Home.module.scss';
+
+const mainPhoto = '/img/avatar.png';
 
 const useStyles = makeStyles((theme) => ({
   maincontent: {
@@ -81,9 +82,7 @@ export default function Home() {
           </Box>
         </motion.div>
       </div>
-      <div
-        className={styles.right}
-      >
+      <div className={styles.right}>
         <motion.div
           initial='right'
           animate='animate'

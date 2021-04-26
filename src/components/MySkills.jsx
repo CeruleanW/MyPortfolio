@@ -2,36 +2,18 @@ import React from 'react';
 import Heading from './Heading';
 import {
   Typography,
-  List,
-  ListSubheader,
   ListItem,
-  Grid,
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-const useStyles = makeStyles((theme) => ({
-  header: {
-    fontSize: '1rem',
-    fontFamily: 'Muli,sans-serif',
-    color: theme.palette.secondary.dark,
-  },
-}));
+import styles from '../styles/components.module.scss';
 
 const SkillSet = (props) => {
   const { title } = props;
-  const classes = useStyles();
 
   return (
-    <Grid item lg={3}>
-      <List
-        subheader={
-          <ListSubheader className={classes.header} disableGutters>
-            {title}
-          </ListSubheader>
-        }
-      >
-        {props.children}
-      </List>
-    </Grid>
+    <div className='mb-4'>
+      <p className={`${styles['skill-header']} mb-3`}>{title}</p>
+      <div className='w-full flex pl-4 flex-wrap'>{props.children}</div>
+    </div>
   );
 };
 
@@ -46,6 +28,10 @@ const SimpleSkill = (props) => {
   );
 };
 
+const Skill = (props) => {
+  return <li className={`${styles['skill-item']}`}>{props.children}</li>;
+};
+
 const ExpandableSkill = (props) => {
   return <SimpleSkill>{props.children}</SimpleSkill>;
 };
@@ -54,32 +40,36 @@ export default function MySkills() {
   return (
     <>
       <Heading>My Skills</Heading>
-      <Grid container justify={'space-between'}>
+      <div className='flex flex-col justify-between lg:flex-row mt-8'>
         <SkillSet title={'Coding Language'}>
-          <ExpandableSkill>Java</ExpandableSkill>
-          <ExpandableSkill>JavaScript</ExpandableSkill>
-          <SimpleSkill>HTML5, CSS3</SimpleSkill>
-          <SimpleSkill>Python</SimpleSkill>
+          <Skill>JavaScript</Skill>
+          <Skill>Java</Skill>
+          <Skill>HTML5</Skill>
+          <Skill>CSS3</Skill>
+          <Skill>SQL</Skill>
+          <Skill>Python</Skill>
         </SkillSet>
         <SkillSet title={'Frameworks & Libs'}>
-          <ExpandableSkill>React.js (React Router)</ExpandableSkill>
-          <ExpandableSkill>React Native</ExpandableSkill>
-          <SimpleSkill>Next.js</SimpleSkill>
-          <ExpandableSkill>Material UI</ExpandableSkill>
-          <SimpleSkill>Jest, JUnit</SimpleSkill>
+          <Skill>React.js</Skill>
+          <Skill>React Native</Skill>
+          <Skill>Next.js</Skill>
+          <Skill>Material UI</Skill>
+          <Skill>Jest, JUnit</Skill>
         </SkillSet>
         <SkillSet title={'Methods & Tools'}>
-          <ExpandableSkill>Webpack, NPM</ExpandableSkill>
-          <ExpandableSkill>MongoDB</ExpandableSkill>
-          <SimpleSkill>MatLab, R</SimpleSkill>
-          <SimpleSkill>Test-Driven Development</SimpleSkill>
+          <Skill>Webpack</Skill>
+          <Skill>Babel</Skill>
+          <Skill>MongoDB</Skill>
+          <Skill>MatLab</Skill>
+          <Skill>R</Skill>
+          <Skill>Test-Driven Development</Skill>
         </SkillSet>
         <SkillSet title={'Additional'}>
-          <SimpleSkill>UML</SimpleSkill>
-          <SimpleSkill>SAP</SimpleSkill>
-          <SimpleSkill>Bizagi BPMN Modeler</SimpleSkill>
+          <Skill>UML</Skill>
+          <Skill>SAP</Skill>
+          <Skill>Bizagi BPMN Modeler</Skill>
         </SkillSet>
-      </Grid>
+      </div>
     </>
   );
 }

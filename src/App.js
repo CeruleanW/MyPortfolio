@@ -25,6 +25,7 @@ import './styles/App.scss';
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
 export default function App() {
+  console.log(`%cHi! I'm Asher. \nThanks for coming! `, 'background: #222; color: #bada55; font-size: 2.6rem');
   console.log(STATEMENT);
   return (
     <Theme>

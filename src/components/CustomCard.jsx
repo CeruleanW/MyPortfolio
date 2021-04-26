@@ -2,14 +2,12 @@ import React from "react";
 import {
   Typography,
   Card,
-  CardActions,
   CardActionArea,
   CardContent,
   CardMedia,
   Box,
 } from "@material-ui/core";
 import { PropTypes } from "prop-types";
-import defaultImage from "../assets/img/SD-default-image.png";
 import { Link } from "react-router-dom";
 
 //Styles
@@ -36,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 CustomCard.defaultProps = {
-  bg: defaultImage,
+  bg: `/img/image-placeholder-gray.png`,
 };
 
 CustomCard.propTypes = {

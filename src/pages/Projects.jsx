@@ -2,29 +2,27 @@ import PropTypes from "prop-types";
 import React from "react";
 import ProjectSection from "../components/ProjectSection";
 import data from '../data/projects.json';
+import styles from '../styles/Projects.module.scss';
 
-// Structure:
-// - title
-// - function
-// - explanations of projects to illustrate how you handle problems
 
 const projectData = data.projects;
 
-export default function Projects(props) {
+export default function Projects() {
   return (
-    <div>
+    <>
+      <h1 className='text-center text-5xl p-5 pb-0 lg:mt-5'>Projects</h1>
       {projectData.map((project, index) => {
         const isRightNarrow = index % 2 !== 0; 
-        
         return (
           <ProjectSection
-            key={"project-" + index}
+            key={project.id}
             isRightNarrow={isRightNarrow}
             index={index}
+            className={styles.section}
             {...project}
           ></ProjectSection>
         );
       })}
-    </div>
+    </>
   );
 }
