@@ -4,10 +4,7 @@ import Nav from './components/Nav';
 import NavTabs from './components/NavTabs';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Projects from './pages/Projects';
-import AboutMe from './pages/AboutMe';
-import Contact from './pages/Contact';
-import ProjectDetailPage from './pages/ProjectDetailPage';
+import { LinearProgress } from '@material-ui/core';
 import { AnimatePresence } from 'framer-motion';
 import Theme from './styles/Theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,9 +12,10 @@ import ScrollToTop from './components/ScrollToTop';
 import { STATEMENT, PAGEROUTES, PAGETITLES } from './data/globals';
 import './styles/App.scss';
 
-// const Projects = lazy(() => import('../components/Project/Projects'));
-// const AboutMe = lazy(() => import('../components/AboutMe/AboutMe'));
-// const Contact = lazy(() => import('./pages/Contact'));
+const Projects = lazy(() => import('./pages/Projects'));
+const AboutMe = lazy(() => import('./pages/AboutMe'));
+const Contact = lazy(() => import('./pages/Contact'));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 
 // Sections
 // - Career Goals: Your professional goals for the next five years.
@@ -25,7 +23,10 @@ import './styles/App.scss';
 //    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
 
 export default function App() {
-  console.log(`%cHi! I'm Asher. \nThanks for coming! `, 'background: #222; color: #bada55; font-size: 2.6rem');
+  console.log(
+    `%cHi! I'm Asher. \nThanks for coming! `,
+    'background: #222; color: #bada55; font-size: 2.6rem'
+  );
   console.log(STATEMENT);
   return (
     <Theme>
@@ -46,19 +47,21 @@ export default function App() {
               )}
             />
           </Nav>
-          <main className={'root-main'} >
+          <main className={'root-main'}>
             <Route
               render={({ location }) => (
                 <AnimatePresence exitBeforeEnter initial={false}>
                   <Switch key={location.pathname}>
                     <Route exact path={PAGEROUTES[0]} render={() => <Home />} />
-                    <Route
-                      path={`${PAGEROUTES[1]}/:id`}
-                      render={() => <ProjectDetailPage />}
-                    />
-                    <Route path={PAGEROUTES[1]} render={() => <Projects />} />
-                    <Route path={PAGEROUTES[2]} render={() => <AboutMe />} />
-                    <Route path={PAGEROUTES[3]} render={() => <Contact />} />
+                    <React.Suspense fallback={<LinearProgress />}>
+                      <Route
+                        path={`${PAGEROUTES[1]}/:id`}
+                        render={() => <ProjectDetailPage />}
+                      />
+                      <Route path={PAGEROUTES[1]} render={() => <Projects />} />
+                      <Route path={PAGEROUTES[2]} render={() => <AboutMe />} />
+                      <Route path={PAGEROUTES[3]} render={() => <Contact />} />
+                    </React.Suspense>
                   </Switch>
                 </AnimatePresence>
               )}

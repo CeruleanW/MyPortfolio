@@ -72,7 +72,7 @@ export default function Home() {
           initial='left'
           animate='animate'
           variants={variants}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
         >
           <div mt={12} className={styles.leftBottom}>
             <SeeMyProject height={40} />
@@ -87,7 +87,7 @@ export default function Home() {
           initial='right'
           animate='animate'
           variants={variants}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
         >
           <Image
             src={mainPhoto}
