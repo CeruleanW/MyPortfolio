@@ -1,6 +1,6 @@
 {
-  "short_name": "Yi Yang | Portfolio",
-  "name": "Yi Yang's Personal Portfolio",
+  "short_name": "Asher Yang | Portfolio",
+  "name": "Asher Yang's Personal Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "yiyangdev.me",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

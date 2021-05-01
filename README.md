@@ -10,6 +10,47 @@
   * My main projects will be shown here.
 * Contact
   * The form in this page will send a request to my email service API serverd by Express.js on Heroku. Once a valid request is received, an email will be sent to my work email address.
+* Resume
+  * components
+    * ResumeSectionWrapper
+      * variants: Head, Summary, Skills, Experience, SideProjects, Education, Languages
+      * Header
+        * Name
+        * Title
+        * ContactInfo
+        * Phone
+        * Email
+        * Portfolio
+        * Github
+        * Address
+      * Summary
+        * Content
+      * Skills
+        * SkillItem
+      * Experience
+        * Job
+          * PositionTitle
+          * CompanyName
+          * CompanyIntro
+          * Duration
+          * Location
+          * Spotlight
+      * Projects
+        * ProjectName
+        * Link
+        * Feature
+        * Spotlight
+      * Education
+        * Major
+        * Degree
+        * SchoolName
+        * Duration
+        * Location
+        * Spotlight
+        * GPA
+      * Languages
+        * Name
+        * Level
 
 ## Links
 

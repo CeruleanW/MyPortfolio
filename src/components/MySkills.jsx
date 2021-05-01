@@ -4,7 +4,7 @@ import {
   Typography,
   ListItem,
 } from '@material-ui/core';
-import styles from '../styles/components.module.scss';
+import styles from '../styles//components/components.module.scss';
 
 const SkillSet = (props) => {
   const { title } = props;

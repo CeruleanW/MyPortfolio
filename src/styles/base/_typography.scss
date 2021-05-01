@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import '../abstracts/variables';
+
+h1,
+h2 {
+  font-family: $first-font;
+}

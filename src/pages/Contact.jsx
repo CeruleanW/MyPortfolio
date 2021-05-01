@@ -16,7 +16,7 @@ import SocialMedia from '../components/SocialMedia';
 import { useTheme } from '@material-ui/styles';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import styles from '../styles/Contact.module.scss';
+import styles from '../styles/pages/Contact.module.scss';
 
 const useStyles = makeStyles((theme) => {
   const py = theme.spacing(10);

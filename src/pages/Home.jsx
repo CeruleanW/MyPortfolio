@@ -8,7 +8,7 @@ import ProjectsCarousel from '../components/ProjectsCarousel';
 import DotBox from '../components/DotBox';
 import { motion } from 'framer-motion';
 import { FULLNAME, JOBTITLE } from '../data/globals';
-import styles from '../styles/Home.module.scss';
+import styles from '../styles/pages/Home.module.scss';
 
 const mainPhoto = '/img/avatar.png';
 
