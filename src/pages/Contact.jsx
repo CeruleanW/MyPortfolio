@@ -186,7 +186,7 @@ export default function Contact() {
               onClick={handleSubmit(onSubmit)}
             >
               Submit
-              <span className={styles.tooltiptext}>It will request a Express.js middleware to send a email</span>
+              <span className={styles.tooltiptext}>Click to send a email</span>
             </Button>
           </form>
         </motion.div>

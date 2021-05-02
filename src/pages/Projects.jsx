@@ -9,8 +9,8 @@ const projectData = data.projects;
 export default function Projects() {
   return (
     <>
-      <h1 className='text-center text-5xl p-5 pb-0 lg:mt-5'>
-        <span className={styles.textshadow}>Projects</span>
+      <h1 className={`text-center text-5xl p-5 pb-0 w-full lg:mt-5 ${styles.textshadow}`}>
+        Projects
       </h1>
       {projectData.map((project, index) => {
         const isRightNarrow = index % 2 !== 0;

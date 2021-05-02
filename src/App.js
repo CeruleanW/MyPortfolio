@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from 'react';
+import React, { lazy, useEffect, useState } from 'react';
 import Footer from './components/Footer/Footer';
 import Nav from './components/Nav';
 import NavTabs from './components/NavTabs';
@@ -8,11 +8,16 @@ import { AnimatePresence } from 'framer-motion';
 import Theme from './styles/base/Theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ScrollToTop from './components/ScrollToTop';
-import { STATEMENT, PAGEROUTES, PAGETITLES } from './data/globals';
+import {
+  STATEMENT,
+  PAGE_ROUTES,
+  PAGE_TITLES,
+  PERSONAL_DATA_LINK,
+} from './data/globals';
 import './styles/main.scss';
 import axios from 'axios';
-import {PERSONAL_DATA_LINK} from './data/globals';
 import yaml from 'js-yaml';
+import Resume from './pages/Resume';
 
 const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
@@ -33,18 +38,20 @@ const easterEgg = () => {
 };
 
 export default function App() {
-  easterEgg();
-  console.log(STATEMENT);
+  const [doc, setDoc] = useState(null);
+  // const doc = useRef();
 
-  useEffect( () => {
+  useEffect(() => {
     async function foo() {
       const res = await axios.get(PERSONAL_DATA_LINK);
-      const doc = yaml.load(res.data);
-      console.log(JSON.stringify(doc));
+      setDoc(yaml.load(res.data));
+      // doc.current = yaml.load(res.data);
     }
-
     foo();
-  });
+
+    easterEgg();
+    console.log(STATEMENT);
+  }, []);
 
   return (
     <Theme>
@@ -52,14 +59,14 @@ export default function App() {
       <React.Suspense fallback={<LinearProgress />}>
         <BrowserRouter>
           <div className={'root-container'}>
-            <Nav routes={PAGEROUTES} pageTitles={PAGETITLES}>
+            <Nav routes={PAGE_ROUTES} pageTitles={PAGE_TITLES}>
               <Route
                 path='/'
                 render={({ location }) => (
                   <NavTabs
-                    routes={PAGEROUTES}
+                    routes={PAGE_ROUTES}
                     value={location.pathname}
-                    pageTitles={PAGETITLES}
+                    pageTitles={PAGE_TITLES}
                   />
                 )}
               />
@@ -71,16 +78,27 @@ export default function App() {
                     <Switch key={location.pathname}>
                       <Route
                         exact
-                        path={PAGEROUTES[0]}
+                        path={PAGE_ROUTES[0]}
                         render={() => <Home />}
                       />
                       <Route
-                        path={`${PAGEROUTES[1]}/:id`}
+                        path={`${PAGE_ROUTES[1]}/:id`}
                         render={() => <ProjectDetailPage />}
                       />
-                      <Route path={PAGEROUTES[1]} render={() => <Projects />} />
-                      <Route path={PAGEROUTES[2]} render={() => <AboutMe />} />
-                      <Route path={PAGEROUTES[3]} render={() => <Contact />} />
+                      <Route
+                        path={PAGE_ROUTES[1]}
+                        render={() => <Projects />}
+                      />
+                      <Route path={PAGE_ROUTES[2]} render={() => <AboutMe />} />
+                      <Route path={PAGE_ROUTES[3]} render={() => <Contact />} />
+                      {doc ? (
+                        <Route
+                          path={PAGE_ROUTES[4]}
+                          render={() => (
+                            <Resume {...doc.names} {...doc.resume} />
+                          )}
+                        />
+                      ) : null}
                     </Switch>
                   </AnimatePresence>
                 )}

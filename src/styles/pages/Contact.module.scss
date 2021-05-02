@@ -28,6 +28,7 @@ $text-width: 200px;
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  padding: 8px;
 }
 
 .tooltip .tooltiptext::after {

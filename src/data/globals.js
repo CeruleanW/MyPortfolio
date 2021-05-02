@@ -3,8 +3,8 @@ export const LASTNAME = "Yang";
 export const FULLNAME = FIRSTNAME + " " + LASTNAME;
 export const JOBTITLE = "Web & Mobile Developer";
 export const EMAILAPIURL = "https://email-service-cerulean.herokuapp.com/portfolio";
-export const PAGEROUTES = ['/', '/projects', '/aboutme', '/contact'];
-export const PAGETITLES = ['Home', 'Projects', 'About me', 'Contact'];
+export const PAGE_ROUTES = ['/', '/projects', '/aboutme', '/contact', '/resume'];
+export const PAGE_TITLES = ['Home', 'Projects', 'About me', 'Contact', 'Resume'];
 export const PERSONAL_DATA_LINK = 'https://personal-data-asher.herokuapp.com/static/personal-data.yaml';
 
 

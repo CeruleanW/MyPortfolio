@@ -1,7 +1,7 @@
 import React from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SVGLine from './SVGLine';
-import { Typography, Box } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default function SeeMyProject(props) {

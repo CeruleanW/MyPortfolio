@@ -39,9 +39,9 @@ export function Header() {
         Hi! <span>I'm</span> {FULLNAME}
       </Typography>
       <Box width={'fit-content'}>
-        <Typography variant='h1'>
-          <span className={classes.halfBackground}>{JOBTITLE}</span>
-        </Typography>
+        <h1>
+          <span className={`${classes.halfBackground} text-4xl`}>{JOBTITLE}</span>
+        </h1>
         <motion.div
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}

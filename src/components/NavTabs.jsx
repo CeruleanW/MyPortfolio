@@ -21,6 +21,7 @@ export default function NavTabs(props) {
             <Tab label="Projects" value={allTabs[1]} component={Link} to={allTabs[1]} {...a11yProps(1)} />
             <Tab label="About me" value={allTabs[2]} component={Link} to={allTabs[2]} {...a11yProps(2)} />
             <Tab label="Contact" value={allTabs[3]} component={Link} to={allTabs[3]} {...a11yProps(3)} />
+            <Tab label="Resume" value={allTabs[4]} component={Link} to={allTabs[4]} {...a11yProps(4)} />
         </Tabs>
     );
 }

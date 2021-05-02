@@ -69,7 +69,7 @@ export default function SimpleMenu(props) {
                   id="menu-list-grow"
                   onKeyDown={handleListKeyDown}
                 >
-                  {routes.map( (route, index) => (<MenuItem onClick={handleClose} component={Link} to={route} key={"menu-item-" + index}>{pageTitles[index]}</MenuItem>) )}
+                  {routes.map( (route, index) => (<MenuItem onClick={handleClose} component={Link} to={route} key={"menu-item-" + route}>{pageTitles[index]}</MenuItem>) )}
                 </MenuList>
               </ClickAwayListener>
             </Paper>
