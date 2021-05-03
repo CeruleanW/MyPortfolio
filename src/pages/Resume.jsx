@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Section from '../components/Resume/ResumeSectionWrapper';
 import Title from '../components/Resume/Title';
 import ContactInfo from '../components/Resume/ContactInfo';
@@ -11,16 +11,16 @@ import CompanyName from '../components/Resume/CompanyName';
 import CompanyIntro from '../components/Resume/CompanyIntro';
 import Duration from '../components/Resume/Duration';
 import Location from '../components/Resume/Location';
-import Spotlight from '../components/Resume/Spotlight';
 import ProjectName from '../components/Resume/ProjectName';
 import ProjectLink from '../components/Resume/ProjectLink';
-import Major from '../components/Resume/Major';
-import Degree from '../components/Resume/Degree';
 import SchoolName from '../components/Resume/SchoolName';
-import GPA from '../components/Resume/GPA';
 import Language from '../components/Resume/Language';
 import Features from '../components/Resume/Features';
 import '../styles/pages/resume.scss';
+import ReactToPrint from 'react-to-print';
+import { FIRSTNAME, LASTNAME } from '../data/globals';
+
+const PDF_NAME = FIRSTNAME + LASTNAME + '_Resume';
 
 function HeaderSection(props) {
   const { name, phone, email, portfolio, github, address, title } = props;
@@ -122,9 +122,7 @@ function EducationSection(props) {
         <span className='mr-20'></span>
         <Location>{location}</Location>
         {!!statements ? <Features features={statements} /> : null}
-        {!!projects
-          ? <Features features={projects.features}/>
-          : null}
+        {!!projects ? <Features features={projects.features} /> : null}
         {/* {!!gpa ? <GPA>{gpa}</GPA> : null} */}
       </div>
     );
@@ -183,22 +181,34 @@ export default function Resume(props) {
   const { github, portfolio } = props.links;
   const summaryContent = props.summary.version.short;
   const projects = props['side-projects'];
+  const pdfDOM = useRef(null);
 
   return (
-    <article className='max-w-screen-lg m-auto pt-20'>
-      <HeaderSection
-        name={fullName}
-        {...{ phone, address, email, github, portfolio, title }}
-      />
-      <Section id='summary'>
-        <Title text='Summary' />
-        <Content>{summaryContent}</Content>
-      </Section>
-      <SkillsSection skills={skills} />
-      <ExperienceSection experience={experience} />
-      <ProjectsSection projects={projects} />
-      <EducationSection education={education} />
-      <LanguageSection languages={languages} />
-    </article>
+    <>
+      <div className='h-16'></div>
+      <article className='max-w-screen-lg m-auto resume-container' ref={pdfDOM}>
+        <HeaderSection
+          name={fullName}
+          {...{ phone, address, email, github, portfolio, title }}
+        />
+        <Section id='summary'>
+          <Title text='Summary' />
+          <Content>{summaryContent}</Content>
+        </Section>
+        <SkillsSection skills={skills} />
+        <ExperienceSection experience={experience} />
+        <ProjectsSection projects={projects} />
+        <EducationSection education={education} />
+        <LanguageSection languages={languages} />{' '}
+      </article>
+
+        <div className='flex justify-center mt-16'>
+          <ReactToPrint
+            trigger={() => <button className='m-auto print-button button -blue'>Print</button>}
+            content={() => pdfDOM.current}
+            documentTitle={PDF_NAME}
+          />
+        </div>
+    </>
   );
 }

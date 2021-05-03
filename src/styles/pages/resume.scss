@@ -17,6 +17,11 @@ p {
   font-size: 1rem;
 }
 
+section {
+  page-break-before: auto;
+  // page-break-inside: avoid;
+}
+
 .header-name {
   // font-family: $resume-first;
   font-size: 2.5rem;
@@ -53,6 +58,7 @@ p {
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
+  page-break-after: avoid;
 }
 
 .skill-item {
@@ -73,11 +79,13 @@ p {
   padding-top: 1rem;
   &:first-of-type {
     padding-top: 0;
+    page-break-before: avoid;
   }
   &:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
   }
+  page-break-inside: avoid;
 }
 
 .job {
@@ -95,4 +103,55 @@ p {
 
 .light-text {
   color: lighten($primary, 25%);
+}
+
+@page {
+  margin: 1cm;
+  transform: scale(0.7);
+}
+
+.print-button {
+  padding: 0.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  font-size: 1.2rem;
+  border-radius: 32px;
+}
+
+// button styles
+.button {
+  user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: capitalize;
+
+  color: #fff;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  box-shadow: 2px 5px 10px var(--color-smoke);
+
+  &:hover {
+    transition: all 150ms linear;
+    opacity: 0.85;
+  }
+
+  &:active {
+    transition: all 150ms linear;
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+  }
+}
+
+.button.-blue {
+  color: #ffffff;
+  background: #416dea;
 }
