@@ -68,13 +68,6 @@ export default function AboutMe() {
           <section className={`flex-col mt-10 ${styles.section}`}>
             <MySkills />
           </section>
-          <section
-            className={`flex justify-center pt-8 mt-4 lg:pt-12 ${styles.section}`}
-          >
-            <DowloadButton href='https://drive.google.com/file/d/1kVG2EiIYVW2Bm7j7DMw_6BxSm8fpwrRL/view?usp=sharing'>
-              Resume
-            </DowloadButton>
-          </section>
         </div>
       </div>
     </>
