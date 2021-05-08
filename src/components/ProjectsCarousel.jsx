@@ -39,7 +39,7 @@ export default function ProjectsCarousel(props) {
 
   return (
     <>
-      <Box mx={"auto"} maxWidth={540}>
+      <Box mx={"auto"} maxWidth={580}>
         <CarouselProvider
           naturalSlideWidth={80}
           naturalSlideHeight={70}

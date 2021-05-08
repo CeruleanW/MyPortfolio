@@ -2,28 +2,24 @@
 
 # Asher Yang's Portfolio
 
-> This is my portfolio. Nothing 
+> This is my portfolio. Nothing else.
 
 ## Pages
 
+* Home
 * Projects
   * My main projects will be shown here.
+* About Me
 * Contact
   * The form in this page will send a request to my email service API serverd by Express.js on Heroku. Once a valid request is received, an email will be sent to my work email address.
 * Resume
 
 ## Links
 
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
-
 * Project homepage: <https://yiyangdev.me/>
 * Repository: <https://github.com/CeruleanW/MyPortfolio/>
 * Issue tracker: <https://github.com/CeruleanW/MyPortfolio/issues>
-  * In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
+  * In case of sensitive bugs like security vulnerabilities, please contact yyang.techie@gmail.com directly instead of using issue tracker. We value your effort to improve the security and privacy of this project!
 * Related projects:
   * https://github.com/CeruleanW/idea-dropper
   * <https://github.com/CeruleanW/google-photos-search-enhancer>

@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Description from '../components/Description';
 import MyStory from '../components/MyStory';
 import MySkills from '../components/MySkills';
-import DowloadButton from '../components/DowloadButton';
 import { FULLNAME } from '../data/globals';
 import styles from '../styles/pages/AboutMe.module.scss';
 

@@ -25,11 +25,6 @@ const AboutMe = lazy(() => import('./pages/AboutMe'));
 const Contact = lazy(() => import('./pages/Contact'));
 const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 
-// Sections
-// - Career Goals: Your professional goals for the next five years.
-// - Would be nice
-//    - References - 3-5 people who can verify your professional qualifications, from faculty members, internship supervisors, employment supervisors and supervisors of other activities such as community service projects
-
 const easterEgg = () => {
   console.log(
     `%cHi! I'm Asher. \nThanks for coming! `,
@@ -56,21 +51,22 @@ export default function App() {
   return (
     <Theme>
       <CssBaseline />
-      <React.Suspense fallback={<LinearProgress />}>
-        <BrowserRouter>
-          <div className={'root-container'}>
-            <Nav routes={PAGE_ROUTES} pageTitles={PAGE_TITLES}>
-              <Route
-                path='/'
-                render={({ location }) => (
-                  <NavTabs
-                    routes={PAGE_ROUTES}
-                    value={location.pathname}
-                    pageTitles={PAGE_TITLES}
-                  />
-                )}
-              />
-            </Nav>
+
+      <BrowserRouter>
+        <div className={'root-container'}>
+          <Nav routes={PAGE_ROUTES} pageTitles={PAGE_TITLES}>
+            <Route
+              path='/'
+              render={({ location }) => (
+                <NavTabs
+                  routes={PAGE_ROUTES}
+                  value={location.pathname}
+                  pageTitles={PAGE_TITLES}
+                />
+              )}
+            />
+          </Nav>
+          <React.Suspense fallback={<LinearProgress />}>
             <main className={'root-main'}>
               <Route
                 render={({ location }) => (
@@ -106,9 +102,9 @@ export default function App() {
             </main>
             <Footer />
             <ScrollToTop />
-          </div>
-        </BrowserRouter>
-      </React.Suspense>
+          </React.Suspense>
+        </div>
+      </BrowserRouter>
     </Theme>
   );
 }
