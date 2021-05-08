@@ -18,7 +18,7 @@ export default function Nav(props) {
           <div className='flex-1'></div>
           <Hidden smDown>{props.children}</Hidden>
           <Hidden mdUp>
-            <SimpleMenu routes={props.routes} pageTitles={props.pageTitles} />
+            <SimpleMenu routes={allTabs} pageTitles={props.pageTitles} />
           </Hidden>
         </Toolbar>
       </AppBar>

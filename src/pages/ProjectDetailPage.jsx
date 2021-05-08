@@ -33,9 +33,9 @@ function getProject(targetId) {
 
 function Heading(props) {
   return (
-    <Box>
+    <div>
       <Typography variant={'h2'}>{props.children}</Typography>
-    </Box>
+    </div>
   );
 }
 
