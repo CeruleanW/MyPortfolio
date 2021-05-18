@@ -14,8 +14,8 @@ import {
 import { Box } from "@material-ui/core";
 
 
-//github, linkedin, facebook
 export default function Share(props) {
+  //social media share icons: github, linkedin, facebook
   const {text} = props;
   const iconSize = 26;
   const shareUrl = window.location.href;

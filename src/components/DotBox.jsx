@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => {
 });
 
 export default function DotBox() {
-  // small dots for presentation
+  // small dots used for presentation
   const classes = useStyles();
   return <Box className={classes.dotbox}></Box>;
 }

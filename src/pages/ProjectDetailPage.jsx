@@ -55,17 +55,10 @@ export default function ProjectDetailPage(props) {
     illustrations,
   } = projectData;
 
-  let illustrationPaths = [];
-  if (illustrations) {
-    illustrationPaths = illustrations.map(
-      (imgName) => process.env.PUBLIC_URL + '/img/illustrations/' + imgName
-    ); // local path
-  }
-
   // render the img by index
   const renderIllustration = (index) => {
     try {
-      if (illustrationPaths[index]) {
+      if (illustrations[index]) {
         return (
           <Box
             maxWidth={1000}
@@ -74,7 +67,7 @@ export default function ProjectDetailPage(props) {
             justifyContent='center'
           >
             <img
-              src={illustrationPaths[index]}
+              src={illustrations[index]}
               alt={'illustration'}
               style={{ maxWidth: ' 100%', height: 'auto' }}
             />
@@ -152,6 +145,7 @@ export default function ProjectDetailPage(props) {
               </Description>
             ))}
           </Box>
+          <Box mt={4}>{renderIllustration(2)}</Box>
         </Box>
       </Container>
     </>

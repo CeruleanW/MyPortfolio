@@ -4,7 +4,6 @@ import Title from '../components/Resume/Title';
 import ContactInfo from '../components/Resume/ContactInfo';
 import ContactItem from '../components/Resume/ContactItem';
 import Content from '../components/Resume/Content';
-import SkillItem from '../components/Resume/SkillItem';
 import Job from '../components/Resume/Job';
 import PositionTitle from '../components/Resume/PositionTitle';
 import CompanyName from '../components/Resume/CompanyName';
@@ -19,6 +18,7 @@ import Features from '../components/Resume/Features';
 import '../styles/pages/resume.scss';
 import ReactToPrint from 'react-to-print';
 import { FIRSTNAME, LASTNAME } from '../data/globals';
+import { SkillsSection } from '../components/Resume/SkillsSection';
 
 const PDF_NAME = FIRSTNAME + LASTNAME + '_Resume';
 
@@ -152,21 +152,6 @@ function LanguageSection(props) {
             level={lang.level}
             key={lang.name}
           ></Language>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function SkillsSection(props) {
-  const { skills } = props;
-  return (
-    <Section id='skills'>
-      <Title text='Tech Skills' />
-      {/* map the skill list to each component */}
-      <div className='flex flex-wrap mt-4 justify-start'>
-        {skills.map((skill) => (
-          <SkillItem key={'key-' + skill}>{skill}</SkillItem>
         ))}
       </div>
     </Section>

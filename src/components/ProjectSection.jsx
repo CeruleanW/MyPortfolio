@@ -17,7 +17,7 @@ const ProjectCard = (props) => {
   return (
     <motion.div className={`w-11/12 lg:w-2/5 max-w-full mt-4`} {...scaleAni}>
       <Link to={`${url}/${id}`}>
-        <img src={imagePath} alt={title} className={styles['img-fit']} />
+        <img src={image} alt={title} className={styles['img-fit']} />
       </Link>
     </motion.div>
   );
