@@ -12,7 +12,6 @@ const scaleAni = { whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } };
 const ProjectCard = (props) => {
   const { id, title, image } = props;
   const { url } = useRouteMatch();
-  const imagePath = process.env.PUBLIC_URL + '/img/' + image; // local image path
 
   return (
     <motion.div className={`w-11/12 lg:w-2/5 max-w-full mt-4`} {...scaleAni}>
