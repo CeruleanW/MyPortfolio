@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "framer-motion": "^3.2.1",
     "js-yaml": "^4.1.0",
+    "logrocket": "^1.2.1",
     "material-ui-image": "^3.3.1",
     "node-sass": "4.14.1",
     "pure-react-carousel": "^1.27.6",

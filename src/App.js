@@ -18,6 +18,10 @@ import './styles/main.scss';
 import axios from 'axios';
 import yaml from 'js-yaml';
 import Resume from './pages/Resume';
+import LogRocket from 'logrocket';
+import {easterEgg} from './lib/easter-egg';
+
+LogRocket.init('5bsway/portfolio');
 
 const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
@@ -25,12 +29,6 @@ const AboutMe = lazy(() => import('./pages/AboutMe'));
 const Contact = lazy(() => import('./pages/Contact'));
 const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 
-const easterEgg = () => {
-  console.log(
-    `%cHi! I'm Asher. \nThanks for coming! `,
-    'background: #222; color: #bada55; font-size: 2.6rem'
-  );
-};
 
 export default function App() {
   const [doc, setDoc] = useState(null);
@@ -51,7 +49,6 @@ export default function App() {
   return (
     <Theme>
       <CssBaseline />
-
       <BrowserRouter>
         <div className={'root-container'}>
           <Nav routes={PAGE_ROUTES} pageTitles={PAGE_TITLES}>

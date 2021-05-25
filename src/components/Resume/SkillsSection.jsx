@@ -3,11 +3,11 @@ import Section from './ResumeSectionWrapper';
 import Title from './Title';
 import SkillItem from './SkillItem';
 
-const SkillType = () => {};
+// const SkillType = () => {};
 
 export function SkillsSection(props) {
   const { skills } = props;
-  const { front_end, back_end, general, additional } = skills;
+  const { front_end, back_end, general } = skills;
   return (
     <Section id='skills'>
       <Title text='Tech Skills' />

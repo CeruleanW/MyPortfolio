@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import Image from 'material-ui-image';

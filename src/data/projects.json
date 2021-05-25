@@ -117,7 +117,7 @@
         "goal": "To improve skills in JavaScript & CSS animations, Canvas, and WebGL",
         "spotlight": "A Displacement effect image carousel implemented by curtain.js",
         "problem": [
-          "Got stuck when trying to implement the image carousel transition effect. "
+          "Got stuck when trying to implement the image carousel transition effect."
         ],
         "lesson": [
           "Knowing the needed visual effect name is critical for achieving it, but finding the right name by searching or skimming references is hard and inefficient. The best way would be asking people who knows it. Then I can do the research by myself.",
