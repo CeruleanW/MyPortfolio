@@ -32,13 +32,11 @@ const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 
 export default function App() {
   const [doc, setDoc] = useState(null);
-  // const doc = useRef();
 
   useEffect(() => {
     async function foo() {
       const res = await axios.get(PERSONAL_DATA_LINK);
       setDoc(yaml.load(res.data));
-      // doc.current = yaml.load(res.data);
     }
     foo();
 

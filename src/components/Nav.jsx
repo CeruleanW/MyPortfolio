@@ -9,19 +9,17 @@ export default function Nav(props) {
   const allTabs = props.routes;
 
   return (
-    <>
-      <AppBar position='static'>
-        <Toolbar disableGutters>
-          <p className={`nav-title px-4 no-decoration`}>
-            <Link to={allTabs[0]}>&#10023; Asher.Y</Link>
-          </p>
-          <div className='flex-1'></div>
-          <Hidden smDown>{props.children}</Hidden>
-          <Hidden mdUp>
-            <SimpleMenu routes={allTabs} pageTitles={props.pageTitles} />
-          </Hidden>
-        </Toolbar>
-      </AppBar>
-    </>
+    <AppBar position='static'>
+      <Toolbar disableGutters>
+        <p className={`nav-title px-4 no-decoration`}>
+          <Link to={allTabs[0]}>&#10023; Asher.Y</Link>
+        </p>
+        <div className='flex-1'></div>
+        <Hidden smDown>{props.children}</Hidden>
+        <Hidden mdUp>
+          <SimpleMenu routes={allTabs} pageTitles={props.pageTitles} />
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   );
 }
