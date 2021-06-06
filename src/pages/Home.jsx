@@ -4,7 +4,7 @@ import Image from 'material-ui-image';
 import { makeStyles } from '@material-ui/core/styles';
 import SeeMyProject from '../components/More';
 import ProjectsCarousel from '../components/ProjectsCarousel';
-import DotBox from '../components/DotBox';
+import DotBox from '../components/atomics/DotBox';
 import { motion } from 'framer-motion';
 import { FULLNAME, JOBTITLE } from '../data/globals';
 import styles from '../styles/pages/Home.module.scss';

@@ -17,7 +17,6 @@ import {
 import './styles/main.scss';
 import axios from 'axios';
 import yaml from 'js-yaml';
-import Resume from './pages/Resume';
 import LogRocket from 'logrocket';
 import {easterEgg} from './lib/easter-egg';
 
@@ -28,7 +27,7 @@ const Projects = lazy(() => import('./pages/Projects'));
 const AboutMe = lazy(() => import('./pages/AboutMe'));
 const Contact = lazy(() => import('./pages/Contact'));
 const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
-
+const Resume = lazy(() => import('./pages/Resume'));
 
 export default function App() {
   const [doc, setDoc] = useState(null);
