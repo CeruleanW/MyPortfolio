@@ -3,7 +3,6 @@ import Footer from './components/Footer/Footer';
 import Nav from './components/Nav';
 import NavTabs from './components/NavTabs';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { LinearProgress } from '@material-ui/core';
 import { AnimatePresence } from 'framer-motion';
 import Theme from './styles/base/Theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,6 +18,7 @@ import axios from 'axios';
 import yaml from 'js-yaml';
 import LogRocket from 'logrocket';
 import {easterEgg} from './lib/easter-egg';
+import { LinearProgress } from '@material-ui/core';
 
 LogRocket.init('5bsway/portfolio');
 
@@ -60,7 +60,7 @@ export default function App() {
               )}
             />
           </Nav>
-          <React.Suspense fallback={<LinearProgress />}>
+          <React.Suspense fallback={<LinearProgress color={'secondary'}/>}>
             <main className={'root-main'}>
               <Route
                 render={({ location }) => (

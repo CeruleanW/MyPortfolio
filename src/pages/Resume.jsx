@@ -19,7 +19,6 @@ import '../styles/pages/resume.scss';
 import ReactToPrint from 'react-to-print';
 import { FIRSTNAME, LASTNAME } from '../data/globals';
 import { SkillsSection } from '../components/Resume/SkillsSection';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 const PDF_NAME = FIRSTNAME + LASTNAME + '_Resume';
 

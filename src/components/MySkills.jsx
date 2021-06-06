@@ -43,20 +43,25 @@ export default function MySkills() {
       <div className='flex flex-col justify-between lg:flex-row mt-8'>
         <SkillSet title={'Coding Language'}>
           <Skill>JavaScript</Skill>
+          <Skill>TypeScript</Skill>
           <Skill>Java</Skill>
           <Skill>HTML5</Skill>
           <Skill>CSS3</Skill>
+          <Skill>Sass/Scss</Skill>
           <Skill>SQL</Skill>
           <Skill>Python</Skill>
         </SkillSet>
         <SkillSet title={'Frameworks & Libs'}>
           <Skill>React.js</Skill>
+          <Skill>Redux</Skill>
           <Skill>React Native</Skill>
           <Skill>Next.js</Skill>
+          <Skill>TailwindCSS</Skill>
           <Skill>Material UI</Skill>
           <Skill>Jest, JUnit</Skill>
         </SkillSet>
         <SkillSet title={'Methods & Tools'}>
+          <Skill>Agile Methodology</Skill>
           <Skill>Webpack</Skill>
           <Skill>Babel</Skill>
           <Skill>MongoDB</Skill>
