@@ -1,10 +1,10 @@
 import React from 'react';
-import Heading from './atomics/Heading';
+import Heading from '../atomics/Heading';
 import {
   Typography,
   ListItem,
 } from '@material-ui/core';
-import styles from '../styles//components/components.module.scss';
+import styles from '../../styles/components/components.module.scss';
 
 const SkillSet = (props) => {
   const { title } = props;

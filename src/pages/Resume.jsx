@@ -171,7 +171,7 @@ export default function Resume(props) {
   return (
     <>
       <div className='h-16'></div>
-      <article className='max-w-screen-lg m-auto resume-container' ref={pdfDOM}>
+      <article className='max-w-screen-lg m-auto resume-container px-4' ref={pdfDOM}>
         <HeaderSection
           name={fullName}
           {...{ phone, address, email, github, portfolio, title }}

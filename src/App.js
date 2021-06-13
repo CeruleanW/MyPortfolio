@@ -1,6 +1,6 @@
 import React, { lazy, useEffect, useState } from 'react';
 import Footer from './components/Footer/Footer';
-import Nav from './components/Nav';
+import Nav from './components/organisms/Nav';
 import NavTabs from './components/NavTabs';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';

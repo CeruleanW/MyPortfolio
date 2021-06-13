@@ -1,9 +1,9 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import { motion } from 'framer-motion';
-import Description from '../components/Description';
-import MyStory from '../components/MyStory';
-import MySkills from '../components/MySkills';
+import Description from '../components/molecules/Description';
+import MyStory from '../components/organisms/MyStory';
+import MySkills from '../components/organisms/MySkills';
 import { FULLNAME } from '../data/globals';
 import styles from '../styles/pages/AboutMe.module.scss';
 

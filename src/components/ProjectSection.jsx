@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import { Link, useRouteMatch } from 'react-router-dom';
-import styles from '../styles//components/components.module.scss';
+import styles from '../styles/components/components.module.scss';
 
 // Single project section
 

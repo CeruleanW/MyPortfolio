@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Box, Grid, Container } from '@material-ui/core';
-import Description from '../components/Description';
+import Description from '../components/molecules/Description';
 import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import data from '../data/projects.json';
