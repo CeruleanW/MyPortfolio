@@ -13,12 +13,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-SimpleMenu.propTypes = {
+Menu.propTypes = {
   routes: PropTypes.array, //routes to switch
   pageTitles: PropTypes.array, // title text to be display in the tabs
 };
 
-export default function SimpleMenu(props) {
+export default function Menu(props) {
   // const [anchorEl, setAnchorEl] = useState(null);
   const { routes, pageTitles } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);

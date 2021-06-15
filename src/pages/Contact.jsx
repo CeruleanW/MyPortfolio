@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import { EMAILAPIURL } from '../data/globals';
 import { makeStyles } from '@material-ui/core/styles';
-import SocialMedia from '../components/SocialMedia';
+import SocialMedia from '../components/molecules/SocialMedia';
 import { useTheme } from '@material-ui/styles';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';

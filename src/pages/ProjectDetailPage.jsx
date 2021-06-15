@@ -4,7 +4,7 @@ import Description from '../components/molecules/Description';
 import { useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import data from '../data/projects.json';
-import { MetaDataList } from '../components/MetaDataList';
+import { FeatureList } from '../components/MetaDataList';
 
 //TODO:
 // pics for projects
@@ -89,15 +89,15 @@ export default function ProjectDetailPage(props) {
           </Box>
           <Box mt={4} maxWidth={870}>
             <MetaData>
-              <MetaDataList label={'Type'} item={type} />
-              <MetaDataList label={'Techs'} items={techs} />
-              <MetaDataList
+              <FeatureList label={'Type'} item={type} />
+              <FeatureList label={'Techs'} items={techs} />
+              <FeatureList
                 label={'Source Code'}
                 item={repo}
                 isLink={true}
                 linktext={'Repo'}
               />
-              <MetaDataList
+              <FeatureList
                 label={'Demo'}
                 item={live}
                 isLink={true}

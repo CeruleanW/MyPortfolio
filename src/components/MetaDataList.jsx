@@ -20,7 +20,7 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function MetaDataList(props) {
+export function FeatureList(props) {
   const { label, items, item, isLink, linktext } = props;
   const classes = useStyles();
   const listSymbol = '⊳';

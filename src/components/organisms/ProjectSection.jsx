@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import { Link, useRouteMatch } from 'react-router-dom';
-import styles from '../styles/components/components.module.scss';
+import styles from '../../styles/components/components.module.scss';
 
 // Single project section
 
@@ -37,9 +37,14 @@ const ProjectText = (props) => {
           {`${index + 1}. ${title}`}
         </h2>
         <p className={`mt-3 text-base lg:text-left`}>{subtitle}</p>
-        <div className={`flex flex-wrap mt-20 lg:mt-14 justify-center lg:justify-start`}>
+        <div
+          className={`flex flex-wrap mt-20 lg:mt-14 justify-center lg:justify-start`}
+        >
           {props.techs.map((tech, index) => (
-            <span key={'tech-' + tech} className={`${styles.chip} ${index === 0 ? 'pl-0 pr-2' : 'px-2'}`} >
+            <span
+              key={'tech-' + tech}
+              className={`${styles.chip} ${index === 0 ? 'pl-0 pr-2' : 'px-2'}`}
+            >
               {tech}
             </span>
           ))}
@@ -70,13 +75,11 @@ export default function ProjectSection(props) {
   // - explanations of projects to illustrate how you handle problems
 
   return (
-    <>
-      <section className={`${props.className} `}>
-        <div className='flex flex-col lg:flex-row justify-center items-center mt-10 lg:mt-4 max-w-full flex-grow'>
-          <ProjectCard {...props} />
-          <ProjectText {...props} />
-        </div>
-      </section>
-    </>
+    <section className={`${props.className} `}>
+      <div className='flex flex-col lg:flex-row justify-center items-center mt-10 lg:mt-4 max-w-full flex-grow'>
+        <ProjectCard {...props} />
+        <ProjectText {...props} />
+      </div>
+    </section>
   );
 }

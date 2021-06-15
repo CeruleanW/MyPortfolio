@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import { Toolbar, Hidden } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import SimpleMenu from '../SimpleMenu';
+import Menu from './Menu';
 import '../../styles/components/link.scss';
 
 export default function Nav(props) {
@@ -17,7 +17,7 @@ export default function Nav(props) {
         <div className='flex-1'></div>
         <Hidden smDown>{props.children}</Hidden>
         <Hidden mdUp>
-          <SimpleMenu routes={allTabs} pageTitles={props.pageTitles} />
+          <Menu routes={allTabs} pageTitles={props.pageTitles} />
         </Hidden>
       </Toolbar>
     </AppBar>

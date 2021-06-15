@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ProjectSection from '../components/ProjectSection';
+import ProjectSection from '../components/organisms/ProjectSection';
 import data from '../data/projects.json';
 import styles from '../styles/pages/Projects.module.scss';
 

@@ -1,12 +1,12 @@
 import React, { lazy, useEffect, useState } from 'react';
 import Footer from './components/Footer/Footer';
 import Nav from './components/organisms/Nav';
-import NavTabs from './components/NavTabs';
+import NavTabs from './components/molecules/NavTabs';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Theme from './styles/base/Theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/atomics/ScrollToTop';
 import {
   STATEMENT,
   PAGE_ROUTES,

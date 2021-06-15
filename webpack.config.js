@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   module: {
     rules: [
@@ -18,7 +19,7 @@ module.exports = {
               sourceMapContents: false,
             },
           },
-          'postcss-loader'
+          'postcss-loader',
         ],
       },
     ],
