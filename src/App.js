@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useState } from 'react';
+import React, { lazy, useEffect, useState, useRef } from 'react';
 import Footer from './components/Footer/Footer';
 import Nav from './components/organisms/Nav';
 import NavTabs from './components/molecules/NavTabs';
@@ -31,6 +31,9 @@ const Resume = lazy(() => import('./pages/Resume'));
 
 export default function App() {
   const [doc, setDoc] = useState(null);
+  const resumeData = useRef(null);
+  const resumeVersion = useRef('frontend');
+
 
   useEffect(() => {
     async function foo() {

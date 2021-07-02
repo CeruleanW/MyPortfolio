@@ -1,9 +1,9 @@
 import React from 'react';
-import Section from '../components/Resume/ResumeSectionWrapper';
-import Title from '../components/Resume/Title';
-import ProjectName from '../components/Resume/ProjectName';
-import ProjectLink from '../components/Resume/ProjectLink';
-import Features from '../components/Resume/Features';
+import Section from '../ResumeSectionWrapper';
+import Title from '../atomics/Title';
+import ProjectName from '../atomics/ProjectName';
+import ProjectLink from '../atomics/ProjectLink';
+import Features from '../Features';
 
 export function ProjectsSection(props) {
   // Content for the project section

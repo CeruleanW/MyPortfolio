@@ -1,5 +1,5 @@
 import React from 'react';
-import Spotlight from './Spotlight';
+import Spotlight from './atomics/Spotlight';
 
 export default function Features(props) {
   const { features, children } = props;

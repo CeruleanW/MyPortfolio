@@ -1,4 +1,4 @@
-import ContactInfo from '../ContactInfo';
+import ContactInfo from '../atomics/ContactInfo';
 import ContactItem from '../ContactItem';
 import Section from '../ResumeSectionWrapper';
 

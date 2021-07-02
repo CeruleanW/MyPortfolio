@@ -1,9 +1,9 @@
 import React from 'react';
 import Section from '../ResumeSectionWrapper';
-import Title from '../Title';
+import Title from '../atomics/Title';
 import Duration from '../Duration';
-import Location from '../Location';
-import SchoolName from '../SchoolName';
+import Location from '../atomics/Location';
+import SchoolName from '../atomics/SchoolName';
 import Features from '../Features';
 
 export function EducationSection(props) {

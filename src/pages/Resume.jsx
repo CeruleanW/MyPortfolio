@@ -1,9 +1,9 @@
 import { HeaderSection } from '../components/Resume/sections/HeaderSection';
 import React, { useRef } from 'react';
 import Section from '../components/Resume/ResumeSectionWrapper';
-import Title from '../components/Resume/Title';
+import Title from '../components/Resume/atomics/Title';
 
-import Content from '../components/Resume/Content';
+import Content from '../components/Resume/atomics/Content';
 import Language from '../components/Resume/Language';
 import '../styles/pages/resume.scss';
 import ReactToPrint from 'react-to-print';
@@ -11,11 +11,9 @@ import { FIRSTNAME, LASTNAME } from '../data/globals';
 import { SkillsSection } from '../components/Resume/SkillsSection';
 import { ExperienceSection } from '../components/Resume/sections/ExperienceSection';
 import { EducationSection } from '../components/Resume/sections/EducationSection';
-import { ProjectsSection } from './ProjectsSection';
+import { ProjectsSection } from '../components/Resume/sections/ProjectsSection';
 
 const PDF_NAME = FIRSTNAME + LASTNAME + '_Resume';
-
-
 
 function LanguageSection(props) {
   const { languages } = props;
@@ -43,6 +41,7 @@ export default function Resume(props) {
   const { github, portfolio } = props.links;
   const summaryContent = props.summary.version.short;
   const projects = props['side-projects'];
+
   const pdfDOM = useRef(null);
 
   return (
