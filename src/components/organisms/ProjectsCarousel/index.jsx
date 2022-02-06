@@ -13,8 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CustomCard from '../../molecules/CustomCard';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-// import { carouselProjects } from 'data/projects.json';
-import { carouselProjects } from '../../../data/projects.json';
+import carouselProjects from '../../../data/projects.json';
 
 import './ProjectsCarousel.css';
 
@@ -36,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProjectsCarousel(props) {
   const classes = useStyles();
-  const projectList = carouselProjects;
+  const projectList = carouselProjects.projects;
 
   return (
     <Box mx={'auto'} maxWidth={580}>

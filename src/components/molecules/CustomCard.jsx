@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     width: '100%',
     paddingTop: '56.25%',
+    backgroundSize: 'contain',
   },
   title: {
     // flex: 1
@@ -52,7 +53,7 @@ export default function CustomCard(props) {
       <CardActionArea component={Link} to={`/projects/${id}`}>
         <CardMedia
           className={classes.media}
-          image={process.env.PUBLIC_URL + '/img/' + image}
+          image={image}
           cover={true}
           title={title}
         />
