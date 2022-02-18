@@ -6,13 +6,16 @@ import Location from '../atomics/Location';
 import SchoolName from '../atomics/SchoolName';
 import Features from '../Features';
 
+const MAX_NUMBER = 1;
+
 export function EducationSection(props) {
   const { education } = props;
 
+  const MAX_NUMBER_OF_SCHOOL_PROJECT = 2;
+
   function renderItem(education) {
-    const {
-      major, degree, organization, from, to, location, statements, gpa,
-    } = education;
+    const { major, degree, organization, from, to, location, statements, gpa } =
+      education || {};
     const projects = education['school-projects'];
 
     return (
@@ -26,7 +29,12 @@ export function EducationSection(props) {
         <span className='mr-20'></span>
         <Location>{location}</Location>
         {!!statements ? <Features features={statements} /> : null}
-        {!!projects ? <Features features={projects.features} /> : null}
+        {!!projects ? (
+          <Features
+            features={projects.features}
+            maxNumber={MAX_NUMBER_OF_SCHOOL_PROJECT}
+          />
+        ) : null}
         {/* {!!gpa ? <GPA>{gpa}</GPA> : null} */}
       </div>
     );
@@ -36,9 +44,9 @@ export function EducationSection(props) {
     <Section id='education'>
       <Title text='education' />
       {Array.isArray(education)
-        ? education.map((item) => {
-          return renderItem(item);
-        })
+        ? education.slice(0, MAX_NUMBER).map((item) => {
+            return renderItem(item);
+          })
         : renderItem(education)}
     </Section>
   );

@@ -2,13 +2,12 @@ import { HeaderSection } from '../components/Resume/sections/HeaderSection';
 import React, { useRef } from 'react';
 import Section from '../components/Resume/ResumeSectionWrapper';
 import Title from '../components/Resume/atomics/Title';
-
 import Content from '../components/Resume/atomics/Content';
 import Language from '../components/Resume/Language';
 import '../styles/pages/resume.scss';
 import ReactToPrint from 'react-to-print';
 import { FIRSTNAME, LASTNAME } from '../data/globals';
-import { SkillsSection } from '../components/Resume/SkillsSection';
+import { SkillsSection } from '../components/Resume/sections/SkillsSection';
 import { ExperienceSection } from '../components/Resume/sections/ExperienceSection';
 import { EducationSection } from '../components/Resume/sections/EducationSection';
 import { ProjectsSection } from '../components/Resume/sections/ProjectsSection';
@@ -26,7 +25,7 @@ function LanguageSection(props) {
             name={lang.name}
             level={lang.level}
             key={lang.name}
-          ></Language>
+          />
         ))}
       </div>
     </Section>

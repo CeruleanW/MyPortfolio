@@ -5,12 +5,14 @@ import ProjectName from '../atomics/ProjectName';
 import ProjectLink from '../atomics/ProjectLink';
 import Features from '../Features';
 
-export function ProjectsSection(props) {
+
+
+export function ProjectsSection({projects}) {
   // Content for the project section
   return (
     <Section id='projects'>
       <Title text='Side projects' />
-      {props.projects.map((project) => {
+      {projects?.map((project) => {
         const { features, repo, demo, title } = project;
         return (
           <div key={title} className='inner-section'>
