@@ -3,6 +3,8 @@ import styles from '../../styles/pages/Projects.module.scss';
 import { useProjectsData } from '@/hooks';
 import { Loading } from '../../components/atomics/Loading';
 
+const MAX_NUMBER_OF_PROJECTS = 6;
+
 export function Projects() {
   const { projectData, isLoading, error } = useProjectsData();
 
@@ -15,8 +17,7 @@ export function Projects() {
   }
 
   // console.log('projectData', projectData);
-  const { projects } = projectData || {};
-
+  const projects = projectData?.projects?.slice(0, MAX_NUMBER_OF_PROJECTS);
 
   return (
     <>

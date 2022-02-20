@@ -13,7 +13,7 @@ import { easterEgg } from './lib/easter-egg';
 import { Resume } from './pages/Resume';
 import { Projects } from './pages/Projects';
 import { Home } from './pages/Home';
-import {ProjectDetailPage} from './pages/ProjectDetail';
+import { ProjectDetailPage } from './pages/ProjectDetail';
 import Theme from './styles/base/Theme';
 import './styles/main.scss';
 
