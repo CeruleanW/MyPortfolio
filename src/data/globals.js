@@ -2,10 +2,8 @@ export const FIRSTNAME = "Asher";
 export const LASTNAME = "Yang";
 export const FULLNAME = FIRSTNAME + " " + LASTNAME;
 export const JOBTITLE = "Web & Mobile Developer";
-export const EMAILAPIURL = "https://email-service-cerulean.herokuapp.com/portfolio";
 export const PAGE_ROUTES = ['/', '/projects', '/aboutme', '/contact', '/resume'];
 export const PAGE_TITLES = ['Home', 'Projects', 'About me', 'Contact', 'Resume'];
-export const PERSONAL_DATA_LINK = 'https://personal-data-asher.herokuapp.com/static/personal-data.yaml';
 
 
   // Statement of Originality: A paragraph stating that this is your work and that it is confidential. also indicate if any parts of the portfolio should not be copied.

@@ -2,12 +2,14 @@ import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import Image from 'material-ui-image';
 import { makeStyles } from '@material-ui/core/styles';
-import SeeMyProject from '../components/molecules/More';
-import ProjectsCarousel from '../components/organisms/ProjectsCarousel';
-import DotBox from '../components/atomics/DotBox';
+import SeeMyProject from '@/components/molecules/More';
+import {ProjectsCarousel} from '@/components/organisms/ProjectsCarousel';
+import DotBox from '@/components/atomics/DotBox';
 import { motion } from 'framer-motion';
-import { FULLNAME, JOBTITLE } from '../data/globals';
-import styles from '../styles/pages/Home.module.scss';
+import { FULLNAME, JOBTITLE } from '@/data/globals';
+import styles from '@/styles/pages/Home.module.scss';
+import { useProjectsData } from '@/hooks';
+import {Loading} from '@/components/atomics/Loading';
 
 const mainPhoto = '/img/avatar.png';
 
@@ -39,7 +41,9 @@ export function Header() {
       </Typography>
       <Box width={'fit-content'}>
         <h1>
-          <span className={`${classes.halfBackground} text-4xl`}>{JOBTITLE}</span>
+          <span className={`${classes.halfBackground} text-4xl`}>
+            {JOBTITLE}
+          </span>
         </h1>
         <motion.div
           animate={{ opacity: 1 }}
@@ -62,7 +66,17 @@ const variants = {
   left: { opacity: 0, x: -1000 },
 };
 
-export default function Home() {
+export function Home() {
+  const { projectData, isLoading, error } = useProjectsData();
+
+  if (error) {
+    return <div>Error! {error?.messsage}</div>;
+  }
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -77,7 +91,7 @@ export default function Home() {
             <SeeMyProject height={40} />
           </div>
           <Box mt={3}>
-            <ProjectsCarousel />
+            <ProjectsCarousel data={projectData}/>
           </Box>
         </motion.div>
       </div>

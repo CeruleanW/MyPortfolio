@@ -1,17 +1,14 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import Description from '../components/molecules/Description';
 import MyStory from '../components/organisms/MyStory';
 import MySkills from '../components/organisms/MySkills';
 import { FULLNAME } from '../data/globals';
 import styles from '../styles/pages/AboutMe.module.scss';
+import { H1 } from '../components/atomics/Heading';
 
-const H1 = (props) => {
-  return <Typography variant={'h1'}>{props.children}</Typography>;
-};
-
-const MyImage = () => {
+function MyImage() {
   return (
     <img
       src={'/img/about-me-profile.jpg'}
@@ -19,7 +16,7 @@ const MyImage = () => {
       className={styles['img-fit']}
     />
   );
-};
+}
 
 const variants = {
   animate: { opacity: 1, x: 0 },

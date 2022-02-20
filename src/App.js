@@ -1,47 +1,29 @@
-import React, { lazy, useEffect, useState, useRef } from 'react';
-import Footer from './components/Footer/Footer';
-import Nav from './components/organisms/Nav';
-import NavTabs from './components/molecules/NavTabs';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import Theme from './styles/base/Theme';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import ScrollToTop from './components/atomics/ScrollToTop';
-import {
-  STATEMENT,
-  PAGE_ROUTES,
-  PAGE_TITLES,
-  PERSONAL_DATA_LINK,
-} from './data/globals';
-import './styles/main.scss';
-import axios from 'axios';
-import yaml from 'js-yaml';
-import LogRocket from 'logrocket';
-import {easterEgg} from './lib/easter-egg';
 import { LinearProgress } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { AnimatePresence } from 'framer-motion';
+import LogRocket from 'logrocket';
+import React, { lazy, useEffect } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ScrollToTop from './components/atomics/ScrollToTop';
+import Footer from './components/Footer/Footer';
+import NavTabs from './components/molecules/NavTabs';
+import Nav from './components/organisms/Nav';
+import { PAGE_ROUTES, PAGE_TITLES, STATEMENT } from './data/globals';
+import { easterEgg } from './lib/easter-egg';
+import { Resume } from './pages/Resume';
+import { Projects } from './pages/Projects';
+import { Home } from './pages/Home';
+import {ProjectDetailPage} from './pages/ProjectDetail';
+import Theme from './styles/base/Theme';
+import './styles/main.scss';
 
 LogRocket.init('5bsway/portfolio');
 
-const Home = lazy(() => import('./pages/Home'));
-const Projects = lazy(() => import('./pages/Projects'));
 const AboutMe = lazy(() => import('./pages/AboutMe'));
 const Contact = lazy(() => import('./pages/Contact'));
-const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
-const Resume = lazy(() => import('./pages/Resume'));
 
 export default function App() {
-  const [doc, setDoc] = useState(null);
-  const resumeData = useRef(null);
-  const resumeVersion = useRef('frontend');
-
-
   useEffect(() => {
-    async function foo() {
-      const res = await axios.get(PERSONAL_DATA_LINK);
-      setDoc(yaml.load(res.data));
-    }
-    foo();
-
     easterEgg();
     console.log(STATEMENT);
   }, []);
@@ -63,7 +45,7 @@ export default function App() {
               )}
             />
           </Nav>
-          <React.Suspense fallback={<LinearProgress color={'secondary'}/>}>
+          <React.Suspense fallback={<LinearProgress color={'secondary'} />}>
             <main className={'root-main'}>
               <Route
                 render={({ location }) => (
@@ -84,14 +66,7 @@ export default function App() {
                       />
                       <Route path={PAGE_ROUTES[2]} render={() => <AboutMe />} />
                       <Route path={PAGE_ROUTES[3]} render={() => <Contact />} />
-                      {doc ? (
-                        <Route
-                          path={PAGE_ROUTES[4]}
-                          render={() => (
-                            <Resume {...doc.names} {...doc.resume} />
-                          )}
-                        />
-                      ) : null}
+                      <Route path={PAGE_ROUTES[4]} render={() => <Resume />} />
                     </Switch>
                   </AnimatePresence>
                 )}

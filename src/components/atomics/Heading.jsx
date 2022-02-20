@@ -8,3 +8,8 @@ export default function Heading(props) {
     </div>
   );
 }
+
+
+export function H1(props) {
+  return <Typography variant={'h1'}>{props.children}</Typography>;
+}

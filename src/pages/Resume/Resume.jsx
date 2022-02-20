@@ -1,38 +1,20 @@
-import { HeaderSection } from '../components/Resume/sections/HeaderSection';
 import React, { useRef } from 'react';
-import Section from '../components/Resume/ResumeSectionWrapper';
-import Title from '../components/Resume/atomics/Title';
-import Content from '../components/Resume/atomics/Content';
-import Language from '../components/Resume/Language';
-import '../styles/pages/resume.scss';
+import { HeaderSection } from '../../components/Resume/sections/HeaderSection';
+import Section from '../../components/Resume/ResumeSectionWrapper';
+import Title from '../../components/Resume/atomics/Title';
+import Content from '../../components/Resume/atomics/Content';
+import '../../styles/pages/resume.scss';
 import ReactToPrint from 'react-to-print';
-import { FIRSTNAME, LASTNAME } from '../data/globals';
-import { SkillsSection } from '../components/Resume/sections/SkillsSection';
-import { ExperienceSection } from '../components/Resume/sections/ExperienceSection';
-import { EducationSection } from '../components/Resume/sections/EducationSection';
-import { ProjectsSection } from '../components/Resume/sections/ProjectsSection';
+import { FIRSTNAME, LASTNAME } from '../../data/globals';
+import { SkillsSection } from '../../components/Resume/sections/SkillsSection';
+import { ExperienceSection } from '../../components/Resume/sections/ExperienceSection';
+import { EducationSection } from '../../components/Resume/sections/EducationSection';
+import { ProjectsSection } from '../../components/Resume/sections/ProjectsSection';
+import { LanguageSection } from './LanguageSection';
 
 const PDF_NAME = FIRSTNAME + LASTNAME + '_Resume';
 
-function LanguageSection(props) {
-  const { languages } = props;
-  return (
-    <Section id='languages'>
-      <Title text='languages' />
-      <div className='flex '>
-        {languages.map((lang) => (
-          <Language
-            name={lang.name}
-            level={lang.level}
-            key={lang.name}
-          />
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-export default function Resume(props) {
+export function MainResume(props) {
   const fullName = props['full-name'];
   const phone = props['phone-numer'];
   const address = props.location;

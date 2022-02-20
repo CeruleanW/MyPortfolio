@@ -1,0 +1,2 @@
+export const PERSONAL_DATA_LINK = 'https://personal-data-asher.herokuapp.com/static/personal-data.yaml';
+export const PROJECTS_DATA_LINK = 'https://personal-data-asher.herokuapp.com/static/projects.json';

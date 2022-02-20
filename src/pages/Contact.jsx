@@ -10,7 +10,7 @@ import {
   Modal,
   CircularProgress,
 } from '@material-ui/core';
-import { EMAILAPIURL } from '../data/globals';
+import { EMAILAPIURL } from '../features/notification';
 import { makeStyles } from '@material-ui/core/styles';
 import SocialMedia from '../components/molecules/SocialMedia';
 import { useTheme } from '@material-ui/styles';
@@ -100,6 +100,7 @@ export default function Contact() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     setIsReady(false);
+
     //submit data to API for notification
     const requestOptions = createRequestOption(data);
     console.log(requestOptions);

@@ -14,6 +14,7 @@ export function ProjectsSection({projects}) {
       <Title text='Side projects' />
       {projects?.map((project) => {
         const { features, repo, demo, title } = project;
+        
         return (
           <div key={title} className='inner-section'>
             <ProjectName text={title} />

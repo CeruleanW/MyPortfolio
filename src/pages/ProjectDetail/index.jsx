@@ -1,22 +1,11 @@
 import React from 'react';
 import { Typography, Box, Grid, Container } from '@material-ui/core';
-import Description from '../components/molecules/Description';
+import Description from '@/components/molecules/Description';
 import { useParams } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
-import data from '../data/projects.json';
-import { FeatureList } from '../components/MetaDataList';
-
-//TODO:
-// pics for projects
-const { projects } = data;
-
-function Title(props) {
-  return (
-    <>
-      <Typography variant='h1'>{props.children}</Typography>
-    </>
-  );
-}
+import { FeatureList } from '@/components/MetaDataList';
+import { useProjectDataByID } from '@/hooks';
+import { Loading } from '@/components/atomics/Loading';
+import { H1 } from '@/components/atomics/Heading';
 
 export function MetaData(props) {
   return (
@@ -24,11 +13,6 @@ export function MetaData(props) {
       {props.children}
     </Grid>
   );
-}
-
-function getProject(targetId) {
-  const result = projects.find(({ id }) => id === targetId);
-  return result;
 }
 
 function Heading(props) {
@@ -39,21 +23,21 @@ function Heading(props) {
   );
 }
 
-export default function ProjectDetailPage(props) {
+export function ProjectDetailPage(props) {
+  // Hooks
   const { id } = useParams(); //pure item id
-  
-  //use the project id to find project data
-  const projectData = getProject(id);
+  const { projectData, isLoading, error } = useProjectDataByID(id);
 
-  const {
-    title,
-    content,
-    live,
-    type,
-    techs,
-    repo,
-    illustrations,
-  } = projectData;
+  if (error) {
+    return <div>Error! {error?.messsage}</div>;
+  }
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  const { title, content, live, type, techs, repo, illustrations } =
+    projectData || {};
 
   // render the img by index
   const renderIllustration = (index) => {
@@ -83,9 +67,9 @@ export default function ProjectDetailPage(props) {
     <>
       <Container>
         <Box mt={14}>
-          <Title>{title}</Title>
+          <H1>{title}</H1>
           <Box mt={6} maxWidth={800}>
-            <Description>{content.introduction}</Description>
+            <Description>{content?.introduction}</Description>
           </Box>
           <Box mt={4} maxWidth={870}>
             <MetaData>
@@ -116,7 +100,9 @@ export default function ProjectDetailPage(props) {
         {content.spotlight ? (
           <Box mt={8} maxWidth={1024}>
             <Heading>Spotlight</Heading>
-            <Box mt={2}><Description>{content.spotlight}</Description></Box>
+            <Box mt={2}>
+              <Description>{content.spotlight}</Description>
+            </Box>
           </Box>
         ) : null}
         <Box mt={10}>

@@ -13,9 +13,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import CustomCard from '../../molecules/CustomCard';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import carouselProjects from '../../../data/projects.json';
-
 import './ProjectsCarousel.css';
+
+const SLIDE_NUMBER = 5;
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -33,9 +33,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProjectsCarousel(props) {
+export function ProjectsCarousel({ data, ...optionals }) {
   const classes = useStyles();
-  const projectList = carouselProjects.projects;
+
+  if (!data) {
+    return null;
+  }
+
+  const projectList = data?.projects?.slice(0, SLIDE_NUMBER);
 
   return (
     <Box mx={'auto'} maxWidth={580}>
