@@ -1,28 +1,36 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Button } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import { Link, useRouteMatch } from 'react-router-dom';
 import styles from '../../styles/components/components.module.scss';
+import { Card } from '@nextui-org/react';
 
 // Single project section
 
 const scaleAni = { whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } };
 
-const ProjectCard = (props) => {
+function ProjectCard(props) {
   const { id, title, image } = props;
   const { url } = useRouteMatch();
 
   return (
     <motion.div className={`w-11/12 lg:w-2/5 max-w-full mt-4`} {...scaleAni}>
       <Link to={`${url}/${id}`}>
-        <img src={image} alt={title} className={styles['img-fit']} />
+        <Card cover>
+          <Card.Image
+            src={image}
+            alt={title}
+            width='100%'
+            heigth={'auto'}
+            showSkeleton={false}
+          />
+        </Card>
       </Link>
     </motion.div>
   );
-};
+}
 
-const ProjectText = (props) => {
+function ProjectText(props) {
   const { isRightNarrow, title, subtitle, id, index } = props;
   const { url } = useRouteMatch();
 
@@ -66,7 +74,7 @@ const ProjectText = (props) => {
       </motion.div>
     </div>
   );
-};
+}
 
 export default function ProjectSection(props) {
   // Structure:

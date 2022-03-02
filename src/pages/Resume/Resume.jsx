@@ -1,25 +1,24 @@
 import React, { useRef } from 'react';
-import { HeaderSection } from '../../components/Resume/sections/HeaderSection';
-import Section from '../../components/Resume/ResumeSectionWrapper';
-import Title from '../../components/Resume/atomics/Title';
-import Content from '../../components/Resume/atomics/Content';
+import Section from './components/ResumeSectionWrapper';
+import Title from './components/atomics/Title';
+import Content from './components/atomics/Content';
 import '../../styles/pages/resume.scss';
 import ReactToPrint from 'react-to-print';
 import { FIRSTNAME, LASTNAME } from '../../data/globals';
-import { SkillsSection } from '../../components/Resume/sections/SkillsSection';
-import { ExperienceSection } from '../../components/Resume/sections/ExperienceSection';
-import { EducationSection } from '../../components/Resume/sections/EducationSection';
-import { ProjectsSection } from '../../components/Resume/sections/ProjectsSection';
-import { LanguageSection } from './LanguageSection';
+import { SkillsSection } from './components/sections/SkillsSection';
+import { HeaderSection } from './components/sections/HeaderSection';
+import { ExperienceSection } from './components/sections/ExperienceSection';
+import { EducationSection } from './components/sections/EducationSection';
+import { ProjectsSection } from './components/sections/ProjectsSection';
+import { LanguageSection } from './components/sections/LanguageSection';
 
 const PDF_NAME = FIRSTNAME + LASTNAME + '_Resume';
 
 export function MainResume(props) {
   const fullName = props['full-name'];
   const phone = props['phone-numer'];
-  const address = props.location;
-  const { email, title, skills, experience, education, languages } = props;
-  const { github, portfolio } = props.links;
+  const { email, title, skills, experience, education, languages, location: address, links } = props || {};
+  const { github, portfolio } = links;
   const summaryContent = props.summary.version.short;
   const projects = props['side-projects'];
 

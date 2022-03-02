@@ -2,14 +2,15 @@ import ProjectSection from '../../components/organisms/ProjectSection';
 import styles from '../../styles/pages/Projects.module.scss';
 import { useProjectsData } from '@/hooks';
 import { Loading } from '../../components/atomics/Loading';
-
-const MAX_NUMBER_OF_PROJECTS = 6;
+import { ErrorMsg } from '@/components/atomics/ErrorMsg';
+import { MAX_NUMBER_OF_PROJECTS } from './constants';
+import { Title } from './Title';
 
 export function Projects() {
   const { projectData, isLoading, error } = useProjectsData();
 
   if (error) {
-    return <div>Error! {error?.messsage}</div>;
+    return <ErrorMsg text={error?.messsage} />;
   }
 
   if (isLoading) {
@@ -21,12 +22,8 @@ export function Projects() {
 
   return (
     <>
-      <h1
-        className={`text-center text-5xl p-5 pb-0 w-full lg:mt-5 ${styles.textshadow}`}
-      >
-        Projects
-      </h1>
-      {projects.map((project, index) => {
+      <Title />
+      {projects?.map((project, index) => {
         const isRightNarrow = index % 2 !== 0;
         return (
           <ProjectSection

@@ -5,8 +5,6 @@ import ProjectName from '../atomics/ProjectName';
 import ProjectLink from '../atomics/ProjectLink';
 import Features from '../Features';
 
-
-
 export function ProjectsSection({projects}) {
   // Content for the project section
   return (

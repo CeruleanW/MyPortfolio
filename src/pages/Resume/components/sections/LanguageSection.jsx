@@ -1,7 +1,7 @@
 import React from 'react';
-import Section from '../../components/Resume/ResumeSectionWrapper';
-import Title from '../../components/Resume/atomics/Title';
-import Language from '../../components/Resume/Language';
+import Section from '../ResumeSectionWrapper';
+import Title from '../atomics/Title';
+import Language from '../Language';
 
 export function LanguageSection({ languages }) {
   return (

@@ -3,13 +3,13 @@ import { Typography, Box } from '@material-ui/core';
 import Image from 'material-ui-image';
 import { makeStyles } from '@material-ui/core/styles';
 import SeeMyProject from '@/components/molecules/More';
-import {ProjectsCarousel} from '@/components/organisms/ProjectsCarousel';
+import { ProjectsCarousel } from '@/components/organisms/ProjectsCarousel';
 import DotBox from '@/components/atomics/DotBox';
 import { motion } from 'framer-motion';
 import { FULLNAME, JOBTITLE } from '@/data/globals';
 import styles from '@/styles/pages/Home.module.scss';
 import { useProjectsData } from '@/hooks';
-import {Loading} from '@/components/atomics/Loading';
+import { Loading } from '@/components/atomics/Loading';
 
 const mainPhoto = '/img/avatar.png';
 
@@ -91,7 +91,7 @@ export function Home() {
             <SeeMyProject height={40} />
           </div>
           <Box mt={3}>
-            <ProjectsCarousel data={projectData}/>
+            <ProjectsCarousel data={projectData} />
           </Box>
         </motion.div>
       </div>
