@@ -7,11 +7,11 @@ import SchoolName from '../atomics/SchoolName';
 import Features from '../Features';
 
 const MAX_NUMBER = 1;
+const MAX_NUMBER_OF_SCHOOL_PROJECT = 1;
 
 export function EducationSection(props) {
   const { education } = props;
 
-  const MAX_NUMBER_OF_SCHOOL_PROJECT = 2;
 
   function renderItem(education) {
     const { major, degree, organization, from, to, location, statements, gpa } =

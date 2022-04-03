@@ -4,10 +4,11 @@ ContactItem.defaultProps = {
   type: 'link',
 };
 
-export default function ContactItem(props) {
-  const { type, text } = props;
+export default function ContactItem({ type, text, ...optionals }) {
   const icon = getIcon(type);
   const isLink = ['link', 'github', 'portfolio', 'linkedin'].includes(type);
+  const shouldObfuscate = ['phone', 'email', 'address'].includes(type);
+  
   return (
     <div className={'flex-1-3'}>
       {icon}

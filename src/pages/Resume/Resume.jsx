@@ -20,7 +20,7 @@ export function MainResume(props) {
   const { email, title, skills, experience, education, languages, location: address, links } = props || {};
   const { github, portfolio } = links;
   const summaryContent = props.summary.version.short;
-  const projects = props['side-projects'];
+  const sideProjects = props['side-projects'];
 
   const pdfDOM = useRef(null);
 
@@ -41,7 +41,7 @@ export function MainResume(props) {
         </Section>
         <SkillsSection skills={skills} />
         <ExperienceSection experience={experience} />
-        <ProjectsSection projects={projects} />
+        <ProjectsSection projects={sideProjects} />
         <EducationSection education={education} />
         <LanguageSection languages={languages} />{' '}
       </article>

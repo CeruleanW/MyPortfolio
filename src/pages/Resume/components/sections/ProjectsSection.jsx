@@ -5,12 +5,14 @@ import ProjectName from '../atomics/ProjectName';
 import ProjectLink from '../atomics/ProjectLink';
 import Features from '../Features';
 
+const MAX_NUMBER = 2;
+
 export function ProjectsSection({projects}) {
   // Content for the project section
   return (
     <Section id='projects'>
       <Title text='Side projects' />
-      {projects?.map((project) => {
+      {projects?.slice(0, MAX_NUMBER).map((project) => {
         const { features, repo, demo, title } = project;
         
         return (
