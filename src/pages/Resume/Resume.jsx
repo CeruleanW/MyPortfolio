@@ -18,7 +18,7 @@ export function MainResume(props) {
   const fullName = props['full-name'];
   const phone = props['phone-numer'];
   const { email, title, skills, experience, education, languages, location: address, links } = props || {};
-  const { github, portfolio } = links;
+  const { github, portfolio } = links || {};
   const summaryContent = props.summary.version.short;
   const sideProjects = props['side-projects'];
 
@@ -26,7 +26,7 @@ export function MainResume(props) {
 
   return (
     <>
-      <div className='h-16'></div>
+      <div className='h-12'></div>
       <article
         className='max-w-screen-lg m-auto resume-container px-4'
         ref={pdfDOM}
