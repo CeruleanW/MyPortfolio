@@ -7,7 +7,7 @@ export function LanguageSection({ languages }) {
   return (
     <Section id='languages'>
       <Title text='languages' />
-      <div className='flex '>
+      <div className='flex justify-between'>
         {languages.map((lang) => (
           <Language
             name={lang.name}

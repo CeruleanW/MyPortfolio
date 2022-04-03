@@ -1,16 +1,15 @@
 import React from 'react';
 
-export default function Language(props) {
-  const { name, level } = props;
+export default function Language({ name, level, ...optionals }) {
   const levelText = getLevelText(level);
 
   return (
     <div className='flex-initial flex max-w-lg'>
-      <div className='mr-16'>
+      <div className='mr-8'>
         <p className='font-semibold'>{name}</p>
         <p className='opacity-90'>{levelText}</p>
       </div>
-      <div className='items-center flex mr-16'>{renderLevel(level)}</div>
+      <div className='items-center flex'>{renderLevel(level)}</div>
     </div>
   );
 }

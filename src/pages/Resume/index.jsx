@@ -15,5 +15,5 @@ export function Resume(props) {
     return <Loading />;
   }
 
-  return <MainResume {...resumeData.names} {...resumeData.resume} />;
+  return <MainResume {...resumeData?.names} {...resumeData?.resume} />;
 }
